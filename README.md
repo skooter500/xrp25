@@ -29,5 +29,5 @@ Welcome to the Metaverse
 
 Clone these repos and explore:
 
-- [](https://github.com/skooter500/GE1-2024)
-- [](https://github.com/skooter500/questsdg)
+- [https://github.com/skooter500/GE1-2024](https://github.com/skooter500/GE1-2024)
+- [https://github.com/skooter500/questsdg](https://github.com/skooter500/questsdg)
