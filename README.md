@@ -22,6 +22,8 @@ Welcome to the Metaverse
 - [Godot discord](https://discord.com/invite/godotengine)
 
 
+## Week 2 - Transforms & 3D in Godot
+- [Slides](godot_3d_slides.pdf)
 
 ## Week 1
 
