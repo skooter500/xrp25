@@ -20,10 +20,24 @@ Welcome to the Metaverse
 - [5 Games Made in Godot to inspire you each week](https://www.youtube.com/@stayathomedev) 
 - [Game dev news channel](https://www.youtube.com/@gamefromscratch)
 - [Godot discord](https://discord.com/invite/godotengine)
+- [Class discord](https://discord.gg/tB7F77ZsZe)
+- [Godot Gaedhleach]
 
-
-## Week 2 - Transforms & 3D in Godot
+## Week 2
 - [Slides](godot_3d_slides.pdf)
+- [Setup Godot Android Export](https://docs.godotengine.org/en/stable/tutorials/export/exporting_for_android.html)
+
+Clone these repos to see how to create a Godot XR passthrough project
+
+- [Quest SDG](https://github.com/skooter500/questsdg)
+- [IT2](https://github.com/skooter500/it2)
+
+Create a new project and get passthrough working
+
+Use [Hunyan 3d](https://hunyuan-3d.com/) to create some 3D models and import them into your XR project
+
+Take screenshots and upload them to [discord](https://discord.gg/tB7F77ZsZe)
+
 
 ## Week 1
 
