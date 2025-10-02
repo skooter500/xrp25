@@ -11,7 +11,7 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 gradient = SubResource("Gradient_q6qou")
 
 [sub_resource type="Curve" id="Curve_0ttau"]
-_data = [Vector2(0.016736403, 1), 0.0, 0.0, 0, 0, Vector2(0.99163175, 0.06741583), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0.5059121), 0.0, 0.0, 0, 0, Vector2(0.99163175, 0.06741583), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_mh3qb"]
@@ -20,9 +20,10 @@ curve = SubResource("Curve_0ttau")
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_q6qou"]
 emission_shape = 3
 emission_box_extents = Vector3(1, 1, 1)
-spread = 180.0
-initial_velocity_min = 5.0
-initial_velocity_max = 5.0
+direction = Vector3(0, 1, 0)
+spread = 80.0
+initial_velocity_min = 2.0
+initial_velocity_max = 10.0
 scale_curve = SubResource("CurveTexture_mh3qb")
 color_ramp = SubResource("GradientTexture1D_h6mh1")
 
@@ -31,7 +32,7 @@ color_ramp = SubResource("GradientTexture1D_h6mh1")
 [node name="explosion" type="GPUParticles3D"]
 material_override = SubResource("StandardMaterial3D_7rj46")
 amount = 100
-lifetime = 3.0
+speed_scale = 0.2
 explosiveness = 1.0
 trail_enabled = true
 process_material = SubResource("ParticleProcessMaterial_q6qou")

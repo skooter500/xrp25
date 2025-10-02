@@ -15,10 +15,13 @@ func _on_timer_timeout() -> void:
 
 
 func _on_body_entered(b: Node3D) -> void:
-		b.queue_free()
-		self.queue_free()
 		var explosion:GPUParticles3D = explosion_scene.instantiate()
 		explosion.global_position = global_position
 		explosion.emitting = true
+		
+		var color = b.get_node("MeshInstance3D").get_surface_override_material(0).albedo_color
+		explosion.material_override.albedo_color = color
 		get_parent().add_child(explosion)
+		self.queue_free()		
+		b.queue_free()		
 		pass
