@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnbsudran10x6"]
+
+[ext_resource type="Script" path="res://note.gd" id="1_f6fa7"]
+
+[node name="note" type="ColorRect"]
+offset_left = 139.0
+offset_top = 80.0
+offset_right = 159.0
+offset_bottom = 90.0
+script = ExtResource("1_f6fa7")
+speed = 200

@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqp7p5hyewbvj"]
+
+[ext_resource type="Script" uid="uid://dvs14auj3fi6k" path="res://ammo.gd" id="1_mulmr"]
+[ext_resource type="AudioStream" uid="uid://ca4o6f1w1ai8t" path="res://sounds/powerUp.wav" id="2_rfx0k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejtda"]
+size = Vector2(27.0029, 26.0028)
+
+[node name="ammo" type="CharacterBody2D" groups=["ammo"]]
+collision_mask = 5
+motion_mode = 1
+velocity = Vector2(3.81689, 19.6324)
+script = ExtResource("1_mulmr")
+size = 40
+line_size = 5
+color = Color(0.307, 1, 0.00999999, 1)
+
+[node name="PowerupSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_rfx0k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.500053, 0)
+shape = SubResource("RectangleShape2D_ejtda")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0

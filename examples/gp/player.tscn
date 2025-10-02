@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://cacpd8qvulvcp"]
+
+[ext_resource type="Script" uid="uid://dxr3if3celu2b" path="res://player.gd" id="1_jcss3"]
+[ext_resource type="Texture2D" uid="uid://04l6fjuge313" path="res://assets/Spritesheet/PNG/Sprites/Ships/spaceShips_001.png" id="2_m46rs"]
+[ext_resource type="PackedScene" uid="uid://dcn4soippejj5" path="res://bullet.tscn" id="2_tps20"]
+[ext_resource type="Texture2D" uid="uid://cfa8ngqfetkl" path="res://assets/Spritesheet/PNG/Sprites/Astronauts/spaceAstronauts_011.png" id="3_jwfmr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5gtcp"]
+radius = 40.0
+
+[node name="player" type="CharacterBody2D" node_paths=PackedStringArray("bullet_spawn_point")]
+position = Vector2(254, 215)
+script = ExtResource("1_jcss3")
+bullet_scene = ExtResource("2_tps20")
+bullet_spawn_point = NodePath("bullet_spawn_point")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 3.14159
+texture = ExtResource("2_m46rs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5gtcp")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture = ExtResource("3_jwfmr")
+
+[node name="bullet_spawn_point" type="Marker2D" parent="."]
+position = Vector2(0, -50)

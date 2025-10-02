@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8jen7lnm7tb0"]
+
+[ext_resource type="Script" path="res://gdscript_example.gd" id="1_7ftak"]
+
+[node name="gdscript_examples" type="Node2D"]
+script = ExtResource("1_7ftak")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 348.0
+offset_top = 182.0
+offset_right = 709.0
+offset_bottom = 205.0
+text = "Look at the script for GDScript Syntax Examples"

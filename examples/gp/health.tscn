@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://byhadckf2ftdm"]
+
+[ext_resource type="Script" uid="uid://cwu1wej2vf2ha" path="res://health.gd" id="1_ledv5"]
+[ext_resource type="AudioStream" uid="uid://biq3k2p3qbvjk" path="res://sounds/Powerup18.wav" id="2_bydfv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejtda"]
+size = Vector2(27.0029, 26.0028)
+
+[node name="health" type="CharacterBody2D" groups=["health"]]
+collision_mask = 5
+motion_mode = 1
+velocity = Vector2(3.81689, 19.6324)
+script = ExtResource("1_ledv5")
+size = 40
+line_size = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.500053, 0)
+shape = SubResource("RectangleShape2D_ejtda")
+
+[node name="PowerupSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_bydfv")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0

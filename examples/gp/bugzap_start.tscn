@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmbwcl4pfwrj3"]
+
+[ext_resource type="Script" path="res://bugzap_start.gd" id="1_lfrbr"]
+[ext_resource type="Theme" uid="uid://dyroetfulq0o6" path="res://bryans_theme.tres" id="2_ucnvt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_s0u6b"]
+font_size = 100
+
+[node name="start" type="Node2D"]
+script = ExtResource("1_lfrbr")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("2_ucnvt")
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 2
+offset_left = 333.0
+offset_top = 144.0
+offset_right = 882.0
+offset_bottom = 268.0
+text = "BUGZAP"
+label_settings = SubResource("LabelSettings_s0u6b")
+horizontal_alignment = 1
+
+[node name="start" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 356.0
+offset_right = 632.0
+offset_bottom = 394.0
+text = "START"
+
+[node name="quit" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 546.0
+offset_top = 516.0
+offset_right = 613.0
+offset_bottom = 554.0
+text = "QUIT
+"
+
+[connection signal="button_down" from="Control/start" to="." method="_on_restart_button_down"]
+[connection signal="button_down" from="Control/quit" to="." method="_on_quit_button_down"]

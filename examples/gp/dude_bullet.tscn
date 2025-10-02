@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dl7bn3bgrqbcg"]
+
+[ext_resource type="Script" uid="uid://bbich0lxw8wn5" path="res://dude_bullet.gd" id="1_b6ii7"]
+[ext_resource type="PackedScene" uid="uid://nb8daasaeu3i" path="res://explosion.tscn" id="2_u71cm"]
+[ext_resource type="AudioStream" uid="uid://6c271tmj2ceh" path="res://sounds/laserShoot.wav" id="3_jkrdw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mugk0"]
+
+[node name="dude_bullet3" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 4
+motion_mode = 1
+velocity = Vector2(0, -500)
+script = ExtResource("1_b6ii7")
+speed = 500
+explosion = ExtResource("2_u71cm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mugk0")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="LaserShoot" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_jkrdw")
+autoplay = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

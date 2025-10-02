@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://5isoqs3sjupu"]
+
+[node name="row" type="HBoxContainer"]
+
+[node name="col0" type="Button" parent="."]
+layout_mode = 2
+text = "SAMPLE"
+
+[node name="col1" type="Button" parent="."]
+layout_mode = 2
+text = "BIG LOAD OF SDHHJHKJH"

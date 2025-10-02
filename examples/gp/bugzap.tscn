@@ -1,0 +1,84 @@
+[gd_scene load_steps=10 format=3 uid="uid://betoa56tlk8tg"]
+
+[ext_resource type="Script" uid="uid://mwod53ewxeo8" path="res://bugzap.gd" id="1_s2q5l"]
+[ext_resource type="Script" uid="uid://ddyav5gy3bbmy" path="res://bug_player.gd" id="1_vqb0a"]
+[ext_resource type="PackedScene" uid="uid://nb8daasaeu3i" path="res://explosion.tscn" id="2_rwge8"]
+[ext_resource type="PackedScene" uid="uid://b26mblvmunn4a" path="res://bug.tscn" id="4_k6dp0"]
+[ext_resource type="Theme" uid="uid://dyroetfulq0o6" path="res://bryans_theme.tres" id="8_12hsc"]
+[ext_resource type="Script" uid="uid://8iyn4kdi277m" path="res://bug_spawner.gd" id="9_oaua2"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rvup1"]
+size = Vector2(50, 20)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_2f7eg"]
+size = Vector2(10, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7kvm8"]
+size = Vector2(16, 623)
+
+[node name="bugzap" type="Node2D"]
+script = ExtResource("1_s2q5l")
+
+[node name="player" type="CharacterBody2D" parent="."]
+position = Vector2(464, 590)
+script = ExtResource("1_vqb0a")
+explosion_scene = ExtResource("2_rwge8")
+
+[node name="Sprite2D" type="Sprite2D" parent="player"]
+texture = SubResource("PlaceholderTexture2D_rvup1")
+
+[node name="Sprite2D2" type="Sprite2D" parent="player"]
+position = Vector2(0, -24)
+texture = SubResource("PlaceholderTexture2D_2f7eg")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="player"]
+polygon = PackedVector2Array(-25, -10, -5, -10, -5, -39, 5, -39, 5, -10, 25, -10, 25, 10, -25, 10)
+
+[node name="player" type="Area2D" parent="player"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="player/player"]
+position = Vector2(-0.767742, -1.38388)
+scale = Vector2(0.983871, 0.976974)
+polygon = PackedVector2Array(-28, 10, -29, -12, -9, -16, -9, -43, 13, -43, 11, -16, 33, -14, 31, 14)
+
+[node name="laser" type="Line2D" parent="player"]
+position = Vector2(0, -50)
+points = PackedVector2Array(0, 0, 0, 0)
+width = 5.0
+
+[node name="laser_area" type="Area2D" parent="player/laser"]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/laser/laser_area"]
+position = Vector2(2, -311)
+shape = SubResource("RectangleShape2D_7kvm8")
+
+[node name="bug" parent="." instance=ExtResource("4_k6dp0")]
+position = Vector2(100, 100)
+
+[node name="VSplitContainer" type="VSplitContainer" parent="."]
+offset_right = 295.0
+offset_bottom = 72.0
+theme = ExtResource("8_12hsc")
+
+[node name="score" type="Label" parent="VSplitContainer"]
+layout_mode = 2
+text = "SCORE: 0
+"
+
+[node name="lives" type="Label" parent="VSplitContainer"]
+layout_mode = 2
+text = "LIVES: 3
+"
+
+[node name="bug_spawner" type="Node2D" parent="."]
+script = ExtResource("9_oaua2")
+
+[node name="Timer" type="Timer" parent="bug_spawner"]
+autostart = true
+
+[connection signal="bug_hit" from="player" to="." method="_on_player_bug_hit"]
+[connection signal="hit" from="player" to="." method="_on_player_hit"]
+[connection signal="area_entered" from="player/player" to="player" method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="player/laser/laser_area" to="player" method="_on_laser_area_area_entered"]
+[connection signal="timeout" from="bug_spawner/Timer" to="bug_spawner" method="_on_timer_timeout"]

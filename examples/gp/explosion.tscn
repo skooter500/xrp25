@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://nb8daasaeu3i"]
+
+[ext_resource type="AudioStream" uid="uid://biv25b73wi16u" path="res://sounds/explosion.wav" id="1_q7epf"]
+
+[sub_resource type="Curve" id="Curve_up16n"]
+_data = [Vector2(0.0118733, 0.989289), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ci5xv"]
+curve = SubResource("Curve_up16n")
+
+[sub_resource type="Curve" id="Curve_qu08b"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_880us"]
+curve = SubResource("Curve_qu08b")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8i2hp"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(50, 50, 50)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+spread = 180.0
+initial_velocity_min = 500.0
+initial_velocity_max = 750.0
+gravity = Vector3(0, 0, 0)
+scale_min = 10.0
+scale_max = 10.0
+scale_curve = SubResource("CurveTexture_880us")
+alpha_curve = SubResource("CurveTexture_ci5xv")
+
+[node name="explosion" type="GPUParticles2D"]
+modulate = Color(0, 1, 1, 1)
+position = Vector2(-78, -57)
+emitting = false
+amount = 50
+lifetime = 5.0
+one_shot = true
+explosiveness = 1.0
+trail_lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_8i2hp")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_q7epf")
+autoplay = true

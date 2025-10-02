@@ -1,0 +1,98 @@
+[gd_scene load_steps=9 format=3 uid="uid://5xmg4kyjea30"]
+
+[ext_resource type="Script" uid="uid://byl3sew3vbcr5" path="res://shooter_game.gd" id="1_c5ar1"]
+[ext_resource type="AudioStream" uid="uid://boy36rslfnhmp" path="res://sounds/heroplanet.mp3" id="2_ejtda"]
+[ext_resource type="PackedScene" uid="uid://dogoya3fntpbk" path="res://dude.tscn" id="2_gm47b"]
+[ext_resource type="PackedScene" uid="uid://7ffshnxf3qah" path="res://ufo.tscn" id="3_6xsbg"]
+[ext_resource type="PackedScene" uid="uid://nb8daasaeu3i" path="res://explosion.tscn" id="3_c5ar1"]
+[ext_resource type="Script" uid="uid://ck2i25kw3ks1m" path="res://ufo_spawner.gd" id="4_gm47b"]
+[ext_resource type="Texture2D" uid="uid://csfstyjj1bcb6" path="res://sprites/bomb.png" id="8_8wc7a"]
+[ext_resource type="PackedScene" uid="uid://otfovfdhyg6k" path="res://spiral_node.tscn" id="9_otu4l"]
+
+[node name="shooter_game" type="Node2D"]
+script = ExtResource("1_c5ar1")
+
+[node name="spiral_node" parent="." instance=ExtResource("9_otu4l")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Heroplanet" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ejtda")
+
+[node name="dude" parent="." instance=ExtResource("2_gm47b")]
+rotation = 5.68262
+collision_mask = 5
+color = Color(0, 1, 0.25, 0.847059)
+speed = 500.0
+lives = 10
+explosion = ExtResource("3_c5ar1")
+
+[node name="ufo_spawner" type="Marker2D" parent="."]
+script = ExtResource("4_gm47b")
+ufo_scene = ExtResource("3_6xsbg")
+count = 5
+
+[node name="ufo_spawner3" type="Marker2D" parent="."]
+position = Vector2(34, -168)
+script = ExtResource("4_gm47b")
+ufo_scene = ExtResource("9_otu4l")
+radius = 500.0
+rate = 5
+auto_spawn = true
+
+[node name="ufo_spawner4" type="Marker2D" parent="."]
+position = Vector2(34, -168)
+script = ExtResource("4_gm47b")
+ufo_scene = ExtResource("9_otu4l")
+radius = 300.0
+count = 10
+rate = 5
+auto_spawn = true
+
+[node name="ufo_spawner5" type="Marker2D" parent="."]
+position = Vector2(34, -168)
+script = ExtResource("4_gm47b")
+ufo_scene = ExtResource("9_otu4l")
+radius = 700.0
+count = 30
+rate = 5
+auto_spawn = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ufo_count" type="Label" parent="CanvasLayer"]
+offset_right = 134.0
+offset_bottom = 30.0
+text = "UFO_COUNT: 0"
+
+[node name="lives" type="Label" parent="CanvasLayer"]
+offset_left = 1.0
+offset_top = 110.0
+offset_right = 331.0
+offset_bottom = 185.0
+text = "LIVES: 10"
+
+[node name="ammo" type="Label" parent="CanvasLayer"]
+offset_left = 8.0
+offset_top = 221.0
+offset_right = 338.0
+offset_bottom = 296.0
+text = "AMMO: 100"
+
+[node name="level" type="Label" parent="CanvasLayer"]
+offset_left = 8.0
+offset_top = 320.0
+offset_right = 338.0
+offset_bottom = 395.0
+text = "LEVEL: 0"
+
+[node name="target" type="Label" parent="CanvasLayer"]
+offset_left = 14.0
+offset_top = 419.0
+offset_right = 344.0
+offset_bottom = 494.0
+text = "ufo_COUNT: 0"
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(775, 259)
+texture = ExtResource("8_8wc7a")

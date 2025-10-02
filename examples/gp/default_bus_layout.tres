@@ -1,0 +1,14 @@
+[gd_resource type="AudioBusLayout" load_steps=3 format=3 uid="uid://d0tiv0n6oek2y"]
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_jagyb"]
+resource_name = "Reverb"
+
+[sub_resource type="AudioEffectPhaser" id="AudioEffectPhaser_j3pel"]
+resource_name = "Phaser"
+
+[resource]
+bus/0/volume_db = 6.02
+bus/0/effect/0/effect = SubResource("AudioEffectReverb_jagyb")
+bus/0/effect/0/enabled = false
+bus/0/effect/1/effect = SubResource("AudioEffectPhaser_j3pel")
+bus/0/effect/1/enabled = false

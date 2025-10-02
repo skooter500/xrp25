@@ -1,0 +1,80 @@
+[gd_scene load_steps=12 format=3 uid="uid://dum0vq7fy15st"]
+
+[ext_resource type="Script" uid="uid://2c4ruhqpdnx5" path="res://root1.gd" id="1_027t5"]
+[ext_resource type="FontFile" uid="uid://0jk2p2kfmllu" path="res://fonts/Hyperspace Bold.otf" id="2_601f3"]
+[ext_resource type="Script" uid="uid://cwbrwgouo0kkq" path="res://player2.gd" id="3_hurv8"]
+[ext_resource type="PackedScene" uid="uid://dcn4soippejj5" path="res://bullet.tscn" id="4_w5fy6"]
+[ext_resource type="AudioStream" uid="uid://bq4kjn4r61ps2" path="res://sounds/jet.wav" id="5_ee1yw"]
+[ext_resource type="Script" uid="uid://c5kt6yrp2pxxs" path="res://jet_sound.gd" id="6_6rfpp"]
+[ext_resource type="Script" uid="uid://d11q2l5gays6q" path="res://spawner.gd" id="7_jndn7"]
+[ext_resource type="PackedScene" uid="uid://bwi6lmhwtpkeh" path="res://block.tscn" id="8_jabo1"]
+[ext_resource type="Theme" uid="uid://dyroetfulq0o6" path="res://bryans_theme.tres" id="9_uakw0"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_m7bvt"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_7xkkn"]
+
+[node name="root" type="Node2D"]
+script = ExtResource("1_027t5")
+custom_font = ExtResource("2_601f3")
+
+[node name="player" type="RigidBody2D" parent="." node_paths=PackedStringArray("bullet_spawn")]
+position = Vector2(506, 531)
+linear_damp_mode = 1
+linear_damp = 2.0
+angular_damp = 2.0
+script = ExtResource("3_hurv8")
+power = 1000.0
+rot_power = 10000.0
+bullet_scene = ExtResource("4_w5fy6")
+bullet_spawn = NodePath("shoot_point")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="player"]
+stream = ExtResource("5_ee1yw")
+script = ExtResource("6_6rfpp")
+
+[node name="Sprite2D" type="Sprite2D" parent="player"]
+modulate = Color(0.623529, 0.52549, 0.27451, 1)
+material = SubResource("CanvasItemMaterial_m7bvt")
+scale = Vector2(50, 50)
+texture = SubResource("CanvasTexture_7xkkn")
+
+[node name="Sprite2D2" type="Sprite2D" parent="player/Sprite2D"]
+modulate = Color(0.588235, 0.537255, 0.309804, 1)
+material = SubResource("CanvasItemMaterial_m7bvt")
+position = Vector2(0, -0.565)
+scale = Vector2(0.2, 2)
+texture = SubResource("CanvasTexture_7xkkn")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="player"]
+polygon = PackedVector2Array(-24, -25, -5, -25, -5, -79, 4, -79, 4, -24, 24, -24, 24, 24, -26, 25)
+
+[node name="shoot_point" type="Node2D" parent="player"]
+position = Vector2(0, -87)
+
+[node name="Timer" type="Timer" parent="player"]
+wait_time = 0.2
+one_shot = true
+
+[node name="spawner" type="Node2D" parent="."]
+script = ExtResource("7_jndn7")
+thing = ExtResource("8_jabo1")
+
+[node name="ui" type="Node" parent="."]
+
+[node name="Panel" type="Panel" parent="ui"]
+offset_left = 46.0
+offset_top = 223.0
+offset_right = 1046.0
+offset_bottom = 273.0
+theme = ExtResource("9_uakw0")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ui/Panel"]
+layout_mode = 0
+offset_right = 1000.0
+offset_bottom = 50.0
+text = "Click the screen to create things to shoot"
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[connection signal="timeout" from="player/Timer" to="player" method="_on_timer_timeout"]

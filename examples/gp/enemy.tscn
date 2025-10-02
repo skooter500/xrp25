@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://ck14xoiwnmh1v"]
+
+[ext_resource type="AudioStream" uid="uid://cxvpo2egevp8l" path="res://sounds/jump.wav" id="5_e1ltt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c0rv2"]
+size = Vector2(88, 51)
+
+[node name="enemy" type="CharacterBody2D" groups=["ufo"]]
+collision_layer = 4
+collision_mask = 7
+
+[node name="Synth" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_e1ltt")
+pitch_scale = 1.02033
+autoplay = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -0.5)
+shape = SubResource("RectangleShape2D_c0rv2")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.12721
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(1, 40)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

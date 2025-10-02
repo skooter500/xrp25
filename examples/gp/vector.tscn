@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://2mcgbjpyoe2x"]
+
+[ext_resource type="Texture2D" uid="uid://dnku55dcgmtb2" path="res://icon.svg" id="1_oev32"]
+[ext_resource type="Texture2D" uid="uid://c844yfbd26ea8" path="res://sprites/bug.png" id="2_8pm2h"]
+[ext_resource type="Script" path="res://spiral.gd" id="4_y6gwc"]
+[ext_resource type="PackedScene" uid="uid://dsoph4ss2clnq" path="res://spiral_arm.tscn" id="5_ulvfa"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="player" type="Sprite2D" parent="."]
+position = Vector2(520, 303)
+texture = ExtResource("1_oev32")
+
+[node name="bug" type="Sprite2D" parent="."]
+position = Vector2(239, 186)
+texture = ExtResource("2_8pm2h")
+
+[node name="spiral" type="Node2D" parent="."]
+position = Vector2(516, 486)
+script = ExtResource("4_y6gwc")
+thing_scene = ExtResource("5_ulvfa")
+count = 100
+radius = 200
+
+[node name="spiral_arm" parent="." instance=ExtResource("5_ulvfa")]

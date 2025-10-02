@@ -1,0 +1,55 @@
+[gd_scene load_steps=13 format=3 uid="uid://78gir33rst00"]
+
+[ext_resource type="Script" path="res://midi_visualiser.gd" id="1_iliec"]
+[ext_resource type="PackedScene" uid="uid://bnbsudran10x6" path="res://note.tscn" id="2_ph56p"]
+[ext_resource type="AudioStream" uid="uid://c5owdj4bnvpnp" path="res://sounds/Blip_Select9.wav" id="3_lm0h5"]
+[ext_resource type="AudioStream" uid="uid://daeeqhtb2f8cn" path="res://sounds/Explosion31.wav" id="4_56iaw"]
+[ext_resource type="AudioStream" uid="uid://boy36rslfnhmp" path="res://sounds/heroplanet.mp3" id="5_31c0a"]
+[ext_resource type="AudioStream" uid="uid://bq4kjn4r61ps2" path="res://sounds/jet.wav" id="6_godpt"]
+[ext_resource type="AudioStream" uid="uid://6y0c0bj54oco" path="res://sounds/Jump5.wav" id="7_4tsu5"]
+[ext_resource type="AudioStream" uid="uid://dxtc48o5qwpl8" path="res://sounds/Laser_Shoot38.wav" id="8_r6oq8"]
+[ext_resource type="AudioStream" uid="uid://76wsnaovdmfp" path="res://sounds/Laser_Shoot41.wav" id="9_p53ek"]
+[ext_resource type="AudioStream" uid="uid://dr7urkmsac1h7" path="res://sounds/Laser_Shoot42.wav" id="10_hcqks"]
+[ext_resource type="AudioStream" uid="uid://biq3k2p3qbvjk" path="res://sounds/Powerup18.wav" id="11_dvcms"]
+[ext_resource type="AudioStream" uid="uid://cjv0286uu0ji6" path="res://sounds/Powerup19.wav" id="12_cbga3"]
+
+[node name="midi_visualiser" type="Node2D"]
+script = ExtResource("1_iliec")
+note_scene = ExtResource("2_ph56p")
+
+[node name="BlipSelect9" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_lm0h5")
+
+[node name="Explosion31" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_56iaw")
+
+[node name="Heroplanet" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_31c0a")
+
+[node name="Jet" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_godpt")
+
+[node name="Jump5" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_4tsu5")
+
+[node name="LaserShoot38" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_r6oq8")
+
+[node name="LaserShoot41" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_p53ek")
+
+[node name="LaserShoot42" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_hcqks")
+
+[node name="Powerup18" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_dvcms")
+
+[node name="Powerup19" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_cbga3")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1168.0
+offset_bottom = 654.0
+color = Color(0, 0, 0, 1)
+
+[node name="SubViewport" type="SubViewport" parent="."]

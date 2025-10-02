@@ -1,0 +1,166 @@
+[gd_scene load_steps=8 format=3 uid="uid://dth1ll88fyqb7"]
+
+[ext_resource type="Script" path="res://node_2d.gd" id="1_auafa"]
+[ext_resource type="PackedScene" uid="uid://b26mblvmunn4a" path="res://bug.tscn" id="2_weddt"]
+[ext_resource type="Texture2D" uid="uid://dnku55dcgmtb2" path="res://icon.svg" id="3_4soax"]
+[ext_resource type="PackedScene" uid="uid://nb8daasaeu3i" path="res://explosion.tscn" id="5_pldsn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uphih"]
+size = Vector2(124, 126)
+
+[sub_resource type="GDScript" id="GDScript_0yqje"]
+script/source = "# This script extends area2d so it can be attached to an area2d
+extends Area2D
+
+# @export means expose the variable in the editor
+@export var explosion_scene:PackedScene
+
+# This variable is global in the script
+# can be used in each of the functions
+var some_variable
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:	
+	
+	# Examples of GDScript syntax
+	var f:float
+	var g:float
+	var h:float	
+	f = 10 # assignment of a value to a float
+	g = 20
+	h = 3	
+	f += 2 # add 2 to f
+	f = f + 2
+	g = f - 5	
+	h *= 2
+	g = h / 3	# divide h by 3
+	var j:int	
+	var k:int
+	var l:int
+	
+	j = 4
+	k = 10
+	l = k / j
+	
+	print(j)
+	print(k)
+	print(l)
+	
+	print(f)
+	print(g)
+	print(h)	
+	
+	# The if statement! For checking things	
+	var score:int = 9
+	
+	if score == 10:
+		print(\"You got the max score\")
+	if score > 5 and score < 9:
+		print(\"You got a good score\")
+	if score <=5:
+		print(\"Try harder!\")
+	
+	# Loops! Do things many times
+	
+	for i in range(5):
+		print(i)
+		
+	print()	
+	# start at 1 finish at 4
+	for i in range(1, 5):
+		print(i) 
+
+	print()
+	# start at 4 finish at 0
+	for i in range(5, -1, -1):
+		print(i) 
+
+	
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:	
+	DebugDraw2D.set_text(\"pos\", position)
+	DebugDraw2D.set_text(\"glob_pos\", global_position)
+	DebugDraw2D.set_text(\"rotation\", rotation)
+	DebugDraw2D.set_text(\"glo_rotation\", global_rotation)
+	
+	rotation -= 0.1
+	
+	position.x += 1
+	# position.y += 1
+	
+	# Find a node in the scene
+	var wall:Node2D = get_node(\"../wall2\")	
+	
+	# this will also work!
+	wall = $\"../wall2\"
+	
+	# Add this from assetlib if you need it
+	DebugDraw2D.set_text(\"dist\", wall.global_position.distance_to(global_position))
+	
+	pass
+
+
+func _on_area_entered(area: Area2D) -> void:
+	print(\"Collided!\")
+	
+	
+	if area.name == \"wall\":
+		print(area)
+		
+		# Create an explosion from the collision
+		var explosion:GPUParticles2D = explosion_scene.instantiate()
+		explosion.global_position = area.global_position
+		explosion.emitting = true
+		
+		# Add the explosion to the scene tree
+		get_parent().add_child(explosion)	
+		
+		# delete the thing I collide with
+		area.queue_free()
+		
+	pass # Replace with function body.
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ukdl2"]
+size = Vector2(131, 129)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_auafa")
+bug_scene = ExtResource("2_weddt")
+
+[node name="wall2" type="Area2D" parent="."]
+position = Vector2(720, 112)
+
+[node name="Sprite2D" type="Sprite2D" parent="wall2"]
+texture = ExtResource("3_4soax")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall2"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_uphih")
+
+[node name="wall" type="Area2D" parent="."]
+position = Vector2(527, 123)
+
+[node name="Sprite2D" type="Sprite2D" parent="wall"]
+texture = ExtResource("3_4soax")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_uphih")
+
+[node name="moving_thing" type="Area2D" parent="."]
+position = Vector2(191, 105)
+script = SubResource("GDScript_0yqje")
+explosion_scene = ExtResource("5_pldsn")
+
+[node name="Sprite2D2" type="Sprite2D" parent="moving_thing"]
+texture = ExtResource("3_4soax")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="moving_thing"]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_ukdl2")
+
+[connection signal="area_entered" from="moving_thing" to="moving_thing" method="_on_area_entered"]

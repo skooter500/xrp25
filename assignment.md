@@ -1,29 +1,5 @@
 # Games Engines 1 Assignment 2024
 
-"Musical Experience" 
-
-![](images/cybertrad.png.jpg)
-
-For this assignment, you will demonstrate your creativity and technical competency with Godot and git by creating an interactive musical experience. Your project must be deployed to a mobile device (phone/tablet) or XR headset (Quest 3 preferred). The project can be one of:
-
-- An interactive musical instrument
-- A music-based game
-- A real-time music visualizer
-
-Your experience can be 2D, 3D, or XR (Extended Reality). XR implementations are particularly encouraged as we have headsets available for development and testing.
-
-Some project ideas:
-- Hand-tracked virtual instruments (guitar, piano, drums)
-- Beat Saber-style rhythm game
-- Audio-reactive visualization environment
-- Motion-controlled sound generator
-- Collaborative musical playground
-- Spatial audio experience
-- Interactive music sequencer
-- Virtual DJ system
-- Generative music system
-- Holographic Step Sequencer
-- Audio-driven particle system
 
 ## Technical Requirements
 - Must be deployed and fully functional on at least one target platform (mobile or XR)

@@ -23,6 +23,9 @@ Welcome to the Metaverse
 - [Class discord](https://discord.gg/tB7F77ZsZe)
 - [Godot Gaedhleach]
 
+## Week 3
+- Clone this repo and open each of the scenes
+
 ## Week 2
 - [Slides](godot_3d_slides.pdf)
 - [Setup Godot Android Export](https://docs.godotengine.org/en/stable/tutorials/export/exporting_for_android.html)

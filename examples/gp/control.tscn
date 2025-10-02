@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://w7eux18y0ixa"]
+
+[ext_resource type="Theme" uid="uid://bsyatf2qyqicf" path="res://bryans_theme.tres" id="1_ti0t7"]
+[ext_resource type="Script" path="res://expand.gd" id="2_52t2c"]
+[ext_resource type="PackedScene" uid="uid://wx5yg1eqc384" path="res://button.tscn" id="3_guop2"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 977.0
+offset_bottom = 430.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_ti0t7")
+columns = 2
+script = ExtResource("2_52t2c")
+
+[node name="Button" parent="MarginContainer/GridContainer" instance=ExtResource("3_guop2")]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+text = "jhjhjhms\\jdbcmashdbc"
+
+[node name="Button3" parent="MarginContainer/GridContainer" instance=ExtResource("3_guop2")]
+layout_mode = 2
+
+[node name="Button4" type="Button" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+text = "jhjhjh"
+
+[node name="Button5" parent="MarginContainer/GridContainer" instance=ExtResource("3_guop2")]
+layout_mode = 2
+text = "nnndsfsd"
+
+[node name="Button6" type="Button" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+text = "jhjhjh"
+
+[node name="Button7" parent="MarginContainer/GridContainer" instance=ExtResource("3_guop2")]
+layout_mode = 2
+
+[node name="Button8" type="Button" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+text = "jhjhjh"

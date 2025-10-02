@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://652vkknks7jc"]
+
+[ext_resource type="PackedScene" uid="uid://cacpd8qvulvcp" path="res://player.tscn" id="1_unoke"]
+[ext_resource type="Texture2D" uid="uid://c844yfbd26ea8" path="res://sprites/bug.png" id="2_6rl1t"]
+[ext_resource type="Script" path="res://enemy.gd" id="3_h7r1o"]
+
+[node name="root" type="Node2D"]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(531, 122)
+
+[node name="player" parent="Marker2D" instance=ExtResource("1_unoke")]
+position = Vector2(200, 200)
+
+[node name="Sprite2D2" parent="Marker2D/player" index="2"]
+position = Vector2(132, -32)
+
+[node name="bullet_spawn_point" parent="Marker2D/player" index="3"]
+position = Vector2(0, -60)
+
+[node name="enemy" type="Sprite2D" parent="." node_paths=PackedStringArray("player")]
+position = Vector2(579, 290)
+texture = ExtResource("2_6rl1t")
+script = ExtResource("3_h7r1o")
+player = NodePath("../Marker2D/player")
+speed = 100.0
+
+[editable path="Marker2D/player"]

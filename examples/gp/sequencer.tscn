@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=3 uid="uid://blinpucsw0jxx"]
+
+[ext_resource type="Script" path="res://root1.gd" id="1_xgocf"]
+[ext_resource type="Script" path="res://sequencer.gd" id="2_f7sqc"]
+[ext_resource type="PackedScene" uid="uid://dnbgsshu5js6g" path="res://sample_scene.tscn" id="3_e7xm4"]
+[ext_resource type="PackedScene" uid="uid://wx5yg1eqc384" path="res://button.tscn" id="4_i4a6q"]
+[ext_resource type="Theme" uid="uid://dyroetfulq0o6" path="res://bryans_theme.tres" id="4_yc7u6"]
+[ext_resource type="Script" path="res://expand.gd" id="6_rcy7s"]
+
+[node name="root" type="Node2D"]
+script = ExtResource("1_xgocf")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/ScrollContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("4_yc7u6")
+columns = 2
+script = ExtResource("6_rcy7s")
+
+[node name="Button" parent="CanvasLayer/ScrollContainer/PanelContainer/GridContainer" instance=ExtResource("4_i4a6q")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button2" type="Button" parent="CanvasLayer/ScrollContainer/PanelContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "jhjhjhms\\jdbcmashdbc"
+
+[node name="Button3" parent="CanvasLayer/ScrollContainer/PanelContainer/GridContainer" instance=ExtResource("4_i4a6q")]
+layout_mode = 2
+
+[node name="Button4" type="Button" parent="CanvasLayer/ScrollContainer/PanelContainer/GridContainer"]
+layout_mode = 2
+text = "jhjhjh"
+
+[node name="Button5" parent="CanvasLayer/ScrollContainer/PanelContainer/GridContainer" instance=ExtResource("4_i4a6q")]
+layout_mode = 2
+text = "nnndsfsd"
+
+[node name="Button6" type="Button" parent="CanvasLayer/ScrollContainer/PanelContainer/GridContainer"]
+layout_mode = 2
+text = "jhjhjh"
+
+[node name="Button7" parent="CanvasLayer/ScrollContainer/PanelContainer/GridContainer" instance=ExtResource("4_i4a6q")]
+layout_mode = 2
+
+[node name="Button8" type="Button" parent="CanvasLayer/ScrollContainer/PanelContainer/GridContainer"]
+layout_mode = 2
+text = "jhjhjh"
+
+[node name="sequencer" type="Node2D" parent="."]
+script = ExtResource("2_f7sqc")
+pad_scene = ExtResource("3_e7xm4")
+note_scene = ExtResource("4_i4a6q")

@@ -1,0 +1,92 @@
+[gd_scene load_steps=9 format=3 uid="uid://cr56iay613r2c"]
+
+[ext_resource type="Texture2D" uid="uid://dnku55dcgmtb2" path="res://icon.svg" id="1_tuvkx"]
+[ext_resource type="Script" uid="uid://c4e1hcodxjdh5" path="res://jump_dude.gd" id="2_0nau7"]
+[ext_resource type="Script" uid="uid://o6onxuhc5d2s" path="res://coin.gd" id="3_43jer"]
+[ext_resource type="Script" uid="uid://cyq1e4jm2rm73" path="res://enemy_dude.gd" id="4_d2hnt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0nau7"]
+size = Vector2(615, 130)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_43jer"]
+size = Vector2(122, 123)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2hnt"]
+size = Vector2(123, 134)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v350l"]
+radius = 380.911
+
+[node name="Node2D" type="Node2D"]
+
+[node name="platform" type="StaticBody2D" parent="."]
+position = Vector2(413, 873)
+
+[node name="Sprite2D" type="Sprite2D" parent="platform"]
+scale = Vector2(4.73438, 1)
+texture = ExtResource("1_tuvkx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform"]
+position = Vector2(3.5, -1)
+shape = SubResource("RectangleShape2D_0nau7")
+
+[node name="platform2" type="StaticBody2D" parent="."]
+position = Vector2(927, 757)
+
+[node name="Sprite2D" type="Sprite2D" parent="platform2"]
+scale = Vector2(4.73438, 1)
+texture = ExtResource("1_tuvkx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform2"]
+position = Vector2(3.5, -1)
+shape = SubResource("RectangleShape2D_0nau7")
+
+[node name="platform3" type="StaticBody2D" parent="."]
+position = Vector2(1496, 837)
+
+[node name="Sprite2D" type="Sprite2D" parent="platform3"]
+scale = Vector2(4.73438, 1)
+texture = ExtResource("1_tuvkx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform3"]
+position = Vector2(3.5, -1)
+shape = SubResource("RectangleShape2D_0nau7")
+
+[node name="jump_dude" type="CharacterBody2D" parent="."]
+position = Vector2(214, 636)
+script = ExtResource("2_0nau7")
+
+[node name="Sprite2D" type="Sprite2D" parent="jump_dude"]
+texture = ExtResource("1_tuvkx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="jump_dude"]
+position = Vector2(4, 1.5)
+shape = SubResource("RectangleShape2D_43jer")
+
+[node name="Camera2D" type="Camera2D" parent="jump_dude"]
+
+[node name="coin" type="Area2D" parent="."]
+position = Vector2(1021, 637)
+script = ExtResource("3_43jer")
+
+[node name="Sprite2D" type="Sprite2D" parent="coin"]
+texture = ExtResource("1_tuvkx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coin"]
+position = Vector2(0.5, -2)
+shape = SubResource("RectangleShape2D_d2hnt")
+
+[node name="enemy_dude" type="CharacterBody2D" parent="."]
+position = Vector2(1736, 706)
+script = ExtResource("4_d2hnt")
+
+[node name="Sprite2D" type="Sprite2D" parent="enemy_dude"]
+texture = ExtResource("1_tuvkx")
+
+[node name="Area2D" type="Area2D" parent="enemy_dude"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_dude/Area2D"]
+shape = SubResource("CircleShape2D_v350l")
+
+[connection signal="body_entered" from="coin" to="coin" method="_on_body_entered"]
+[connection signal="body_entered" from="enemy_dude/Area2D" to="enemy_dude" method="_on_area_2d_body_entered"]

@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://7ffshnxf3qah"]
+
+[ext_resource type="Script" uid="uid://cq1w3jbf2rpos" path="res://ufo.gd" id="1_c0rv2"]
+[ext_resource type="PackedScene" uid="uid://dl7bn3bgrqbcg" path="res://dude_bullet.tscn" id="2_lwnds"]
+[ext_resource type="AudioStream" uid="uid://cxvpo2egevp8l" path="res://sounds/jump.wav" id="3_7har2"]
+[ext_resource type="PackedScene" uid="uid://byhadckf2ftdm" path="res://health.tscn" id="3_vg23t"]
+[ext_resource type="PackedScene" uid="uid://cqp7p5hyewbvj" path="res://ammo.tscn" id="4_bh5go"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c0rv2"]
+size = Vector2(88, 51)
+
+[node name="ufo" type="CharacterBody2D" node_paths=PackedStringArray("bullet_spawn") groups=["ufo"]]
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_c0rv2")
+color = Color(0.97, 0, 0.598167, 0.45098)
+line_size = 5.0
+bullet_scene = ExtResource("2_lwnds")
+bullet_spawn = NodePath("Marker2D")
+loot_array = Array[PackedScene]([ExtResource("3_vg23t"), ExtResource("4_bh5go")])
+
+[node name="Synth" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_7har2")
+pitch_scale = 1.02033
+autoplay = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -0.5)
+shape = SubResource("RectangleShape2D_c0rv2")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.12721
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(1, 40)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

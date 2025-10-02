@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1bnq83851e46"]
+
+[ext_resource type="Script" uid="uid://dw7cch7btbe8p" path="res://examples/tank_game_3d/bullet.gd" id="1_12hsy"]
+[ext_resource type="Material" uid="uid://12bqh76svrfe" path="res://examples/tank_game_3d/blue.tres" id="2_wwgin"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_25qko"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4njcl"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[node name="bullet" type="CharacterBody3D"]
+script = ExtResource("1_12hsy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_25qko")
+surface_material_override/0 = ExtResource("2_wwgin")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_4njcl")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

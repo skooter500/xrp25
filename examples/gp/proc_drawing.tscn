@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbv3aryxrp2cd"]
+
+[ext_resource type="Script" uid="uid://nrq7dna5iure" path="res://proc_drawing.gd" id="1_eqb75"]
+
+[node name="gradient" type="Node2D"]
+script = ExtResource("1_eqb75")

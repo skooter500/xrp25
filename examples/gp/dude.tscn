@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://dogoya3fntpbk"]
+
+[ext_resource type="Script" uid="uid://d2cl3lf8mhede" path="res://dude.gd" id="1_prwsp"]
+[ext_resource type="PackedScene" uid="uid://dl7bn3bgrqbcg" path="res://dude_bullet.tscn" id="2_62y41"]
+[ext_resource type="AudioStream" uid="uid://b1q0g70jukbs8" path="res://sounds/synth2.wav" id="3_62y41"]
+[ext_resource type="AudioStream" uid="uid://ca4o6f1w1ai8t" path="res://sounds/powerUp.wav" id="4_domqy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gm47b"]
+size = Vector2(55, 53)
+
+[node name="dude" type="CharacterBody2D" node_paths=PackedStringArray("bullet_spawn") groups=["dude"]]
+rotation = 1.19095
+collision_mask = 6
+motion_mode = 1
+script = ExtResource("1_prwsp")
+size = 50
+line_size = 5
+color = Color(0, 1, 0.25, 0.45098)
+turn_left_input = "left"
+turn_right_input = "right"
+forward_input = "forward"
+back_input = "back"
+bullet_scene = ExtResource("2_62y41")
+bullet_spawn = NodePath("Marker2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_gm47b")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, -38)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="Synth2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_62y41")
+pitch_scale = 0.527535
+autoplay = true
+
+[node name="PowerupSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_domqy")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://co685ganh10xi"]
+
+[ext_resource type="Script" uid="uid://cpan187ymgqda" path="res://gen_art.gd" id="1_2a7kj"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="gen_art" type="Node2D" parent="."]
+position = Vector2(440, 291)
+script = ExtResource("1_2a7kj")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 2.0
+offset_top = 26.0
+offset_right = 149.0
+offset_bottom = 56.0
+text = "Num lines:"
+
+[node name="num_lines" type="HSlider" parent="."]
+offset_left = 167.0
+offset_top = 13.0
+offset_right = 619.0
+offset_bottom = 29.0
+max_value = 1000.0
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 27.0
+offset_top = 93.0
+offset_right = 130.0
+offset_bottom = 156.0
+text = "Radius:
+"
+
+[node name="radius" type="HSlider" parent="."]
+offset_left = 193.0
+offset_top = 110.0
+offset_right = 627.0
+offset_bottom = 126.0
+max_value = 1.0
+step = 0.01
+
+[connection signal="value_changed" from="num_lines" to="gen_art" method="_on_num_lines_value_changed"]
+[connection signal="value_changed" from="radius" to="gen_art" method="_on_radius_value_changed"]

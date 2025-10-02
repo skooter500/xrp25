@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://b26mblvmunn4a"]
+
+[ext_resource type="Script" path="res://bug.gd" id="1_nnkhd"]
+[ext_resource type="PackedScene" uid="uid://wk5jgsobmh3w" path="res://bomb.tscn" id="2_s2pxd"]
+[ext_resource type="PackedScene" uid="uid://nb8daasaeu3i" path="res://explosion.tscn" id="3_cqlux"]
+[ext_resource type="AudioStream" uid="uid://dr7urkmsac1h7" path="res://sounds/Laser_Shoot42.wav" id="4_j6f0n"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ovx4e"]
+size = Vector2(50, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qxifh"]
+size = Vector2(52, 51)
+
+[node name="bug" type="Area2D" node_paths=PackedStringArray("bomb_spawn") groups=["bug"]]
+position = Vector2(278, 100)
+script = ExtResource("1_nnkhd")
+bomb_spawn = NodePath("bomb_spawn")
+bomb_scene = ExtResource("2_s2pxd")
+explosion_scene = ExtResource("3_cqlux")
+
+[node name="Timer" type="Timer" parent="." groups=["bug"]]
+wait_time = 0.5
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_ovx4e")
+
+[node name="bomb_spawn" type="Marker2D" parent="."]
+position = Vector2(0, 45)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_j6f0n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_qxifh")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

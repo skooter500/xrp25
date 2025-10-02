@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://r5gpvyus7nrn"]
+
+[ext_resource type="Script" uid="uid://x1oyix45cbup" path="res://if_statement.gd" id="1_8w2qs"]
+[ext_resource type="Texture2D" uid="uid://c844yfbd26ea8" path="res://sprites/bug.png" id="2_y7hgn"]
+[ext_resource type="Script" uid="uid://d3mwjq3hexwqs" path="res://back_and_forth.gd" id="3_4ckbl"]
+
+[node name="if_statement" type="Node2D"]
+script = ExtResource("1_8w2qs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(404, 169)
+texture = ExtResource("2_y7hgn")
+script = ExtResource("3_4ckbl")
