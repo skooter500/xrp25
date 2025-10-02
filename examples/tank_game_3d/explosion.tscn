@@ -3,15 +3,15 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7rj46"]
 transparency = 1
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.843481, 0.0660814, 0.812292, 1)
 
 [sub_resource type="Gradient" id="Gradient_q6qou"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_h6mh1"]
 gradient = SubResource("Gradient_q6qou")
 
 [sub_resource type="Curve" id="Curve_0ttau"]
-_data = [Vector2(0.004184097, 0.49438208), 0.0, 0.0, 0, 0, Vector2(0.99163175, 0.06741583), 0.0, 0.0, 0, 0]
+_data = [Vector2(0.016736403, 1), 0.0, 0.0, 0, 0, Vector2(0.99163175, 0.06741583), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_mh3qb"]
@@ -26,7 +26,7 @@ initial_velocity_max = 5.0
 scale_curve = SubResource("CurveTexture_mh3qb")
 color_ramp = SubResource("GradientTexture1D_h6mh1")
 
-[sub_resource type="BoxMesh" id="BoxMesh_7rj46"]
+[sub_resource type="BoxMesh" id="BoxMesh_q6qou"]
 
 [node name="explosion" type="GPUParticles3D"]
 material_override = SubResource("StandardMaterial3D_7rj46")
@@ -35,4 +35,4 @@ lifetime = 3.0
 explosiveness = 1.0
 trail_enabled = true
 process_material = SubResource("ParticleProcessMaterial_q6qou")
-draw_pass_1 = SubResource("BoxMesh_7rj46")
+draw_pass_1 = SubResource("BoxMesh_q6qou")
