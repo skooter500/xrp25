@@ -41,7 +41,7 @@ func _physics_process(delta: float) -> void:
 	# position.z += speed * delta
 	# global_position.z += speed * delta
 	
-	var f = Input.get_axis("move_back", "move_forward")
+	var f = Input.get_axis("back", "forward")
 	
 	var v = Vector3()	
 	v = global_transform.basis.z # My direction vector	
@@ -49,7 +49,7 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 	
-	var r = Input.get_axis("turn_left", "turn_right")
+	var r = Input.get_axis("left", "right")
 	
 	rotate_y(- deg_to_rad(rot_speed) * r * delta)
 	# rotate_y()
