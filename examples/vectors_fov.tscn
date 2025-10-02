@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://d2cnv7v7huh3k"]
+[gd_scene load_steps=21 format=3 uid="uid://d2cnv7v7huh3k"]
 
 [ext_resource type="Script" uid="uid://ccapn8xl7be3e" path="res://examples/TPCamera.gd" id="1_1bql5"]
 [ext_resource type="Material" uid="uid://dvo75cymypytd" path="res://examples/green.tres" id="1_ljfv3"]
@@ -9,6 +9,22 @@
 [ext_resource type="PackedScene" uid="uid://c1bnq83851e46" path="res://examples/bullet.tscn" id="6_ngcvm"]
 [ext_resource type="Script" uid="uid://mkucon514ulc" path="res://examples/tower.gd" id="8_57hm3"]
 [ext_resource type="Texture2D" uid="uid://btpx6v347s3tm" path="res://icon.svg" id="9_eh4lc"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wrycs"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_duv53"]
+sky_material = SubResource("ProceduralSkyMaterial_wrycs")
+
+[sub_resource type="Environment" id="Environment_h6nat"]
+background_mode = 1
+sky = SubResource("Sky_duv53")
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.2
+tonemap_mode = 2
+glow_enabled = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_00q4b"]
 size = Vector2(100, 100)
@@ -32,14 +48,18 @@ albedo_texture = ExtResource("9_eh4lc")
 
 [node name="root" type="Node3D"]
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_h6nat")
+
 [node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("target", "player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.34612, -17.565)
 script = ExtResource("1_1bql5")
 target = NodePath("../tank/cam_target")
 player = NodePath("../tank")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.486978, -0.857167, -0.16768, -0.325568, -1.4231e-08, 0.945518, -0.810468, 0.515038, -0.279066, 0, 0, 0)
 
 [node name="wall" type="Node3D" parent="."]
 transform = Transform3D(0.599429, 0, -0.800428, 0, 1, 0, 0.800428, 0, 0.599429, -10.4284, 0, 9.54581)
