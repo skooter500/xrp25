@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://ds5a0kbqntaeg"]
+[gd_scene load_steps=20 format=3 uid="uid://ds5a0kbqntaeg"]
 
 [ext_resource type="Script" uid="uid://ccapn8xl7be3e" path="res://examples/tank_game_3d/TPCamera.gd" id="1_i2j3l"]
 [ext_resource type="Script" uid="uid://ef65si4dmrks" path="res://examples/tank_game_3d/wall.gd" id="2_q73g1"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://c1bnq83851e46" path="res://examples/tank_game_3d/bullet.tscn" id="6_sxryu"]
 [ext_resource type="Material" uid="uid://12bqh76svrfe" path="res://examples/tank_game_3d/blue.tres" id="7_80aio"]
 [ext_resource type="Script" uid="uid://mkucon514ulc" path="res://examples/tank_game_3d/tower.gd" id="8_q1488"]
-[ext_resource type="Texture2D" uid="uid://btpx6v347s3tm" path="res://icon.svg" id="9_b2hls"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wrycs"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -44,7 +43,11 @@ size = Vector3(0.1, 0.1, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_jb5pm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hh1m8"]
-albedo_texture = ExtResource("9_b2hls")
+albedo_color = Color(0.8352941, 0.0627451, 0, 1)
+metallic = 0.61
+roughness = 0.36
+emission_enabled = true
+normal_enabled = true
 
 [node name="TankGame3D" type="Node3D"]
 
@@ -62,7 +65,7 @@ target = NodePath("../tank/cam_target")
 player = NodePath("../tank")
 
 [node name="wall" type="Node3D" parent="."]
-transform = Transform3D(0.599429, 0, -0.800428, 0, 1, 0, 0.800428, 0, 0.599429, -1.8911228, 0, 4.2431507)
+transform = Transform3D(0.599429, 0, -0.800428, 0, 1, 0, 0.800428, 0, 0.599429, -16.239841, 0, -23.516115)
 script = ExtResource("2_q73g1")
 brick_scene = ExtResource("3_c5v0u")
 
