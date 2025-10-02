@@ -12,7 +12,6 @@ size = Vector3(0.1, 0.1, 0.1)
 
 [node name="bullet" type="Area3D"]
 script = ExtResource("1_12hsy")
-speed = 10.0
 explosion_scene = ExtResource("2_6oqgw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

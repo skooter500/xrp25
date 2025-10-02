@@ -20,7 +20,9 @@ func _on_body_entered(b: Node3D) -> void:
 		explosion.emitting = true
 		
 		var color = b.get_node("MeshInstance3D").get_surface_override_material(0).albedo_color
-		explosion.material_override.albedo_color = color
+		var m = StandardMaterial3D.new()		
+		m.albedo_color = color
+		explosion.material_override = m
 		get_parent().add_child(explosion)
 		self.queue_free()		
 		b.queue_free()		
