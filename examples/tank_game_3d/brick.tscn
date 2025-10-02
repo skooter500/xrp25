@@ -5,6 +5,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_gw8lq"]
 
 [node name="brick" type="RigidBody3D"]
+can_sleep = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_k1byt")

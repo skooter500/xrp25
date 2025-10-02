@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" path="res://addons/trailmesh/example/albedo.png" id="6_qnefe"]
 [ext_resource type="Script" path="res://infinite_terrain.gd" id="6_uyb8m"]
 [ext_resource type="Texture2D" path="res://addons/trailmesh/example/normal.png" id="7_3n501"]
-[ext_resource type="PackedScene" uid="uid://d2v5tptyj6j6i" path="res://examples/tank_game_3d/terrain_tile.tscn" id="7_c3k2y"]
+[ext_resource type="PackedScene" uid="uid://d2v5tptyj6j6i" path="res://examples/infinite_terrain/terrain_tile.tscn" id="7_c3k2y"]
 [ext_resource type="Script" path="res://TPCamera.gd" id="7_i67u7"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_picyu"]

@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://infinite_terrain.gd" id="3_101lm"]
 [ext_resource type="Script" path="res://jet.gd" id="3_qrdwy"]
 [ext_resource type="AudioStream" path="res://jet.wav" id="4_h6qey"]
-[ext_resource type="PackedScene" uid="uid://d2v5tptyj6j6i" path="res://examples/tank_game_3d/terrain_tile.tscn" id="4_kgxkb"]
+[ext_resource type="PackedScene" uid="uid://d2v5tptyj6j6i" path="res://examples/infinite_terrain/terrain_tile.tscn" id="4_kgxkb"]
 [ext_resource type="PackedScene" uid="uid://b3udq6hxbkwpm" path="res://examples/tank_game_3d/gpu_particles_3d.tscn" id="4_so2dn"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_o04m7"]

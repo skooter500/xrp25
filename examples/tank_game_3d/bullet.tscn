@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1bnq83851e46"]
+[gd_scene load_steps=6 format=3 uid="uid://c1bnq83851e46"]
 
 [ext_resource type="Script" uid="uid://dw7cch7btbe8p" path="res://examples/tank_game_3d/bullet.gd" id="1_12hsy"]
+[ext_resource type="PackedScene" uid="uid://dx2v7nxtdy84o" path="res://examples/tank_game_3d/explosion.tscn" id="2_6oqgw"]
 [ext_resource type="Material" uid="uid://12bqh76svrfe" path="res://examples/tank_game_3d/blue.tres" id="2_wwgin"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_25qko"]
@@ -9,11 +10,14 @@ size = Vector3(0.1, 0.1, 0.1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_4njcl"]
 size = Vector3(0.1, 0.1, 0.1)
 
-[node name="bullet" type="CharacterBody3D"]
+[node name="bullet" type="Area3D"]
 script = ExtResource("1_12hsy")
+speed = 10.0
+explosion_scene = ExtResource("2_6oqgw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_25qko")
+skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("2_wwgin")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -21,4 +25,4 @@ shape = SubResource("BoxShape3D_4njcl")
 
 [node name="Timer" type="Timer" parent="."]
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -21,3 +21,7 @@ func _process(delta):
 func _on_timer_timeout():
 	self.queue_free()
 	pass # Replace with function body.
+
+
+func _on_body_entered(body: Node3D) -> void:
+	pass # Replace with function body.
