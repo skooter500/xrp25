@@ -1,4 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://dx2v7nxtdy84o"]
+[gd_scene load_steps=9 format=3 uid="uid://dx2v7nxtdy84o"]
+
+[ext_resource type="AudioStream" uid="uid://bubpef6dosbx2" path="res://sounds/impact_4.wav" id="1_h6mh1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7rj46"]
 transparency = 1
@@ -44,3 +46,5 @@ process_material = SubResource("ParticleProcessMaterial_q6qou")
 draw_pass_1 = SubResource("BoxMesh_q6qou")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("1_h6mh1")
+autoplay = true
