@@ -23,8 +23,12 @@ Welcome to the Metaverse
 - [Class discord](https://discord.gg/tB7F77ZsZe)
 - [Godot Gaedhleach]
 
-## Week 3
-- Clone this repo and open each of the scenes
+## Week 3 - Vector Operations
+
+
+## Lab 
+
+Use VehicleBody3D and create an XR project, where you control a small car. Create the tower and wall and drive the car to crash into them
 
 ## Week 2
 - [Slides](godot_3d_slides.pdf)

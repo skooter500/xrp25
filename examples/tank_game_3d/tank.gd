@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 @export var speed:float = -1
-@export var rot_speed = 180.0
+@export var rot_speed = 10.0
 
 @export var bullet_scene:PackedScene
 @export var bullet_spawn:Node3D
@@ -22,6 +22,9 @@ func print_stuff():
 	DebugDraw2D.set_text("global basis.x", global_transform.basis.x)
 	DebugDraw2D.set_text("global basis.y", global_transform.basis.y)
 	DebugDraw2D.set_text("global basis.z", global_transform.basis.z)
+	print(scale)
+	print(global_scale)
+	
 
 func _time_out():
 	can_fire = true

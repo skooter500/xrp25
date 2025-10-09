@@ -1,12 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://ds5a0kbqntaeg"]
+[gd_scene load_steps=15 format=3 uid="uid://ww3xofhfnvit"]
 
-[ext_resource type="Script" uid="uid://ccapn8xl7be3e" path="res://examples/tank_game_3d/TPCamera.gd" id="1_i2j3l"]
-[ext_resource type="Script" uid="uid://ef65si4dmrks" path="res://examples/tank_game_3d/wall.gd" id="2_q73g1"]
-[ext_resource type="PackedScene" uid="uid://buu3aq61omx1k" path="res://examples/tank_game_3d/brick.tscn" id="3_c5v0u"]
-[ext_resource type="Material" uid="uid://dvo75cymypytd" path="res://examples/tank_game_3d/green.tres" id="4_ubptd"]
-[ext_resource type="PackedScene" uid="uid://os3ynb2quy8n" path="res://examples/tank_game_3d/tank.tscn" id="5_tmdlf"]
-[ext_resource type="Script" uid="uid://ddyr3soc1ncut" path="res://examples/tank_game_3d/enemy1.gd" id="7_bogbv"]
-[ext_resource type="Script" uid="uid://mkucon514ulc" path="res://examples/tank_game_3d/tower.gd" id="8_q1488"]
+[ext_resource type="Script" uid="uid://de4fhwmlpr6qq" path="res://examples/tank_game_3d/start_xr.gd" id="1_teqmp"]
+[ext_resource type="Script" uid="uid://ef65si4dmrks" path="res://examples/tank_game_3d/wall.gd" id="2_a5qa3"]
+[ext_resource type="PackedScene" uid="uid://buu3aq61omx1k" path="res://examples/tank_game_3d/brick.tscn" id="3_1b71r"]
+[ext_resource type="Material" uid="uid://dvo75cymypytd" path="res://examples/tank_game_3d/green.tres" id="4_rmnwk"]
+[ext_resource type="PackedScene" uid="uid://os3ynb2quy8n" path="res://examples/tank_game_3d/tank.tscn" id="5_y6joq"]
+[ext_resource type="Script" uid="uid://mkucon514ulc" path="res://examples/tank_game_3d/tower.gd" id="6_dkcb2"]
+[ext_resource type="Script" uid="uid://ddyr3soc1ncut" path="res://examples/tank_game_3d/enemy1.gd" id="7_gb42s"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wrycs"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -40,6 +40,9 @@ normal_enabled = true
 
 [node name="TankGame3D" type="Node3D"]
 
+[node name="start_xr" type="Node" parent="."]
+script = ExtResource("1_teqmp")
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
@@ -47,47 +50,51 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_h6nat")
 
-[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("target", "player")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.34612, -17.565)
-script = ExtResource("1_i2j3l")
-target = NodePath("../tank/cam_target")
-player = NodePath("../tank")
-
 [node name="wall" type="Node3D" parent="."]
 transform = Transform3D(0.599429, 0, -0.800428, 0, 1, 0, 0.800428, 0, 0.599429, -16.239841, 0, -23.516115)
-script = ExtResource("2_q73g1")
-brick_scene = ExtResource("3_c5v0u")
+script = ExtResource("2_a5qa3")
+brick_scene = ExtResource("3_1b71r")
 
 [node name="Marker3D" type="Marker3D" parent="wall"]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="ground" type="MeshInstance3D" parent="StaticBody3D"]
-material_override = ExtResource("4_ubptd")
+material_override = ExtResource("4_rmnwk")
 mesh = SubResource("PlaneMesh_00q4b")
 skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("WorldBoundaryShape3D_307sh")
 
-[node name="tank" parent="." instance=ExtResource("5_tmdlf")]
+[node name="tank" parent="." instance=ExtResource("5_y6joq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="tower" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.692439, 0.5, 8.002671)
-script = ExtResource("8_q1488")
-brick_scene = ExtResource("3_c5v0u")
+script = ExtResource("6_dkcb2")
+brick_scene = ExtResource("3_1b71r")
 radius = 5.0
 elements = 22
 brick_size = 1.0
 
 [node name="enemy" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9416, 0, -6.55676)
-script = ExtResource("7_bogbv")
+script = ExtResource("7_gb42s")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="enemy"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 mesh = SubResource("BoxMesh_jb5pm")
 surface_material_override/0 = SubResource("StandardMaterial3D_hh1m8")
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+
+[node name="XRController3D" type="XRController3D" parent="XROrigin3D"]
+tracker = &"left_hand"
+
+[node name="XRController3D2" type="XRController3D" parent="XROrigin3D"]
+tracker = &"right_hand"
 
 [editable path="tank"]
