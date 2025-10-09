@@ -34,11 +34,8 @@ color_ramp = SubResource("GradientTexture1D_h6mh1")
 
 [node name="explosion" type="GPUParticles3D"]
 material_override = SubResource("StandardMaterial3D_7rj46")
-emitting = false
 amount = 150
-lifetime = 0.3
-one_shot = true
-speed_scale = 0.5
+lifetime = 5.0
 explosiveness = 0.9
 randomness = 0.1
 trail_enabled = true

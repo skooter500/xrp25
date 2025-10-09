@@ -6,7 +6,9 @@ extends Area3D
 
 func _physics_process(delta: float) -> void:	
 	var v = global_transform.basis.z
-	global_translate(v * speed * delta)
+	global_position = global_position + v * speed * delta
+	look_at(global_position - global_transform.basis.z)
+	# global_translate(v * speed * delta)
 
 
 func _on_timer_timeout() -> void:
@@ -16,6 +18,7 @@ func _on_timer_timeout() -> void:
 
 func _on_body_entered(b: Node3D) -> void:
 		var explosion:GPUParticles3D = explosion_scene.instantiate()
+		get_parent().add_child(explosion)		
 		explosion.global_position = global_position
 		explosion.emitting = true
 		
@@ -23,7 +26,6 @@ func _on_body_entered(b: Node3D) -> void:
 		var m = StandardMaterial3D.new()		
 		m.albedo_color = color
 		explosion.material_override = m
-		get_parent().add_child(explosion)
 		self.queue_free()		
 		b.queue_free()		
 		pass

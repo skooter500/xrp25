@@ -1,0 +1,112 @@
+[gd_scene load_steps=15 format=3 uid="uid://bcm4y3lajoj11"]
+
+[ext_resource type="Script" uid="uid://ef65si4dmrks" path="res://examples/tank_game_3d/wall.gd" id="1_78iq6"]
+[ext_resource type="Script" uid="uid://bs8nmn7mjqaek" path="res://examples/bge/start_passthrough.gd" id="1_ll85o"]
+[ext_resource type="PackedScene" uid="uid://buu3aq61omx1k" path="res://examples/tank_game_3d/brick.tscn" id="2_ll85o"]
+[ext_resource type="Script" uid="uid://bpf3qsi1p2odl" path="res://examples/tank_game_3d/tank1.gd" id="6_6krkx"]
+[ext_resource type="Material" uid="uid://12bqh76svrfe" path="res://examples/tank_game_3d/blue.tres" id="7_78iq6"]
+[ext_resource type="Script" uid="uid://jl56l34khrea" path="res://examples/tank_game_3d/drive_car.gd" id="8_78iq6"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ll85o"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_2grxa"]
+sky_material = SubResource("ProceduralSkyMaterial_ll85o")
+
+[sub_resource type="Environment" id="Environment_nn1j8"]
+background_mode = 1
+sky = SubResource("Sky_2grxa")
+ambient_light_source = 2
+ambient_light_color = Color(0.99116415, 0.99116427, 0.99116415, 1)
+ambient_light_energy = 0.3
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_307sh"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ll85o"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tuvxv"]
+size = Vector3(0.099609375, 0.09887695, 0.10168457)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yo8sf"]
+size = Vector3(0.014257813, 0.008398438, 0.10131836)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2grxa"]
+size = Vector3(0.01, 0.01, 0.1)
+
+[node name="root" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_nn1j8")
+
+[node name="start_passthrough" type="Node" parent="."]
+script = ExtResource("1_ll85o")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.486978, -0.857167, -0.16768, -0.325568, -1.4231e-08, 0.945518, -0.810468, 0.515038, -0.279066, 0, 0, 0)
+
+[node name="wall" type="Node3D" parent="."]
+transform = Transform3D(0.599429, 0, -0.800428, 0, 1, 0, 0.800428, 0, 0.599429, -10.4284, 0, 9.54581)
+script = ExtResource("1_78iq6")
+brick_scene = ExtResource("2_ll85o")
+
+[node name="Marker3D" type="Marker3D" parent="wall"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_307sh")
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07740456, 0)
+
+[node name="left" type="XRController3D" parent="XROrigin3D"]
+tracker = &"left_hand"
+
+[node name="drive_car" type="Node" parent="XROrigin3D/left"]
+script = ExtResource("8_78iq6")
+
+[node name="right" type="XRController3D" parent="XROrigin3D"]
+tracker = &"right_hand"
+
+[node name="tank" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, -5.954)
+floor_constant_speed = true
+script = ExtResource("6_6krkx")
+
+[node name="player" type="MeshInstance3D" parent="tank"]
+material_override = ExtResource("7_78iq6")
+mesh = SubResource("BoxMesh_ll85o")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tank"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0009765625, -0.00012205914, -0.00030517578)
+shape = SubResource("BoxShape3D_tuvxv")
+
+[node name="cam_target" type="Marker3D" parent="tank"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.8546605, -10.165279)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tank"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.555838, 0.500628)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tank/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0022460949, -0.5026806, -0.44935846)
+shape = SubResource("BoxShape3D_yo8sf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="tank/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.501997, -0.44777155)
+material_override = ExtResource("7_78iq6")
+mesh = SubResource("BoxMesh_2grxa")
+
+[node name="bullet_spawn" type="Marker3D" parent="tank"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.54856, 1.64877)
+
+[node name="Timer" type="Timer" parent="tank"]
+one_shot = true
+
+[connection signal="input_vector2_changed" from="XROrigin3D/left" to="XROrigin3D/left/drive_car" method="_on_left_input_vector_2_changed"]
