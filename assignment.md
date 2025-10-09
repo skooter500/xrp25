@@ -94,7 +94,7 @@ Remember, a **simple, polished experience is better than a complex, unfinished o
 Your proposal should include:
 
 1. **Project Overview** (200-300 words)
-   - Project title and concept
+   - Project title and idea
    - Which SDG(s) your project addresses and why
    - Whether extending Quest:SDG or creating standalone
    - Team members (if applicable) and role distribution#
@@ -145,11 +145,14 @@ Your proposal should include:
 
 
 ## Resources
-- Quest:SDG base project (available in course repository)
+- Quest:SDG base project [available in course repository](https://github.com/skooter500/questsdg)
 - Godot XR documentation: https://docs.godotengine.org/en/stable/tutorials/xr/
 - UN SDG resources: https://sdgs.un.org/
-- Meta Quest development guides
-- Previous student projects showcase (will be shared in class)
+- Meta Quest SDK
+- Previous student projects 
+
+- https://www.youtube.com/watch?v=FtxhKLheXAk&- list=PL1n0B6z4e_E6cRfAfzaoXDueW38ZAFsI9
+- https://www.youtube.com/watch?v=ZkrQnQmDK-M&list=PL1n0B6z4e_E6LmwpeGIW7vYhesNYUOLEN
 
 **The rubric features are indicative rather than exhaustive** - exceptional work may demonstrate excellence in ways not explicitly listed. Focus on showing mastery of XR development and Godot while meaningfully engaging with the UN Sustainable Development Goals.
 
