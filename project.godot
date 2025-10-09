@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="XR Prototyping 25"
-run/main_scene="uid://bcm4y3lajoj11"
+config/name="eXtended Reality Prototyping 25"
+run/main_scene="uid://cmxsk4jm7l87j"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
@@ -19,7 +19,7 @@ config/icon="res://icon.svg"
 
 XRToolsUserSettings="*res://addons/godot-xr-tools/user_settings/user_settings.gd"
 XRToolsRumbleManager="*res://addons/godot-xr-tools/rumble/rumble_manager.gd"
-XrSimulator="*res://addons/xr-simulator/XRSimulator.tscn"
+XrSimulator="res://addons/xr-simulator/XRSimulator.tscn"
 
 [debug_draw_3d]
 
@@ -133,3 +133,4 @@ shaders/enabled=true
 openxr/extensions/htc/passthrough=true
 openxr/extensions/meta/passthrough=true
 openxr/extensions/meta/scene_api=true
+openxr/extensions/meta/color_space/starting_color_space=3
