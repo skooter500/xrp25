@@ -2,7 +2,7 @@
 
 "Quest:SDG - Extended Reality for Sustainable Development"
 
-![](images/questsdg.png)
+![](images/xrx.webp)
 
 For this assignment, you will demonstrate your creativity and technical competency with Godot and XR development by creating an interactive experience inspired by the UN Sustainable Development Goals (SDGs). Your project must be deployed to an XR headset, or mobile device and should educate, engage, or inspire action around one or more of the 17 SDGs.
 
@@ -35,15 +35,7 @@ Projects can be completed **individually or in teams of up to 3 students**.
 
 ## Project Ideas
 
-Of course! Here is a revised "Project Ideas" section focused on smaller, more achievable scopes for a single semester.
-
----
-
-## Project Ideas
-
-Here are some focused, achievable project ideas designed to be completed within a single semester. Remember, a **simple, polished experience is better than a complex, unfinished one.**
-
-### Simple & Focused Experiences (Ideal for Individuals or Small Teams)
+Remember, a **simple, polished experience is better than a complex, unfinished one.**
 
 **1. SDG 13: Climate Action - "The Melting Glacier"**
 *   **Concept:** A single, powerful scene. The user stands on a virtual glacier. Over 60 seconds, they watch it rapidly melt due to rising temperatures, revealing barren rock beneath. A simple UI shows the tons of ice lost and sea-level rise equivalent.
