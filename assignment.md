@@ -35,7 +35,57 @@ Projects can be completed **individually or in teams of up to 3 students**.
 
 ## Project Ideas
 
-???
+Of course! Here is a revised "Project Ideas" section focused on smaller, more achievable scopes for a single semester.
+
+---
+
+## Project Ideas
+
+Here are some focused, achievable project ideas designed to be completed within a single semester. Remember, a **simple, polished experience is better than a complex, unfinished one.**
+
+### Simple & Focused Experiences (Ideal for Individuals or Small Teams)
+
+**1. SDG 13: Climate Action - "The Melting Glacier"**
+*   **Concept:** A single, powerful scene. The user stands on a virtual glacier. Over 60 seconds, they watch it rapidly melt due to rising temperatures, revealing barren rock beneath. A simple UI shows the tons of ice lost and sea-level rise equivalent.
+*   **XR Features:** A simple shader to "shrink" the glacier model, ambient sound of dripping water turning into silence, spatial UI for stats.
+*   **Scope:** One environment, one core visual effect, minimal interaction.
+
+**2. SDG 14: Life Below Water - "Ocean Plastics Cleanup"**
+*   **Concept:** A stationary underwater experience. The user uses their hands to grab floating plastic bottles and bags and put them in a virtual recycling bin. A counter shows how many items they've collected.
+*   **XR Features:** Hand tracking to grab objects, simple physics for floating debris, particle effects for bubbles.
+*   **Scope:** One environment, one interaction (grab), a handful of 3D models.
+
+**3. SDG 15: Life on Land - "Virtual Bee Pollinator"**
+*   **Concept:** The user embodies a bee. They fly from one flower to another (using a simple point-and-teleport mechanic). As they touch each flower, it blooms and a "pollination counter" increases. The goal is to pollinate all flowers in a small garden.
+*   **XR Features:** Teleportation locomotion, simple trigger-based interaction (touching the flower), particle effects for pollen.
+*   **Scope:** A small garden scene, one core game loop, simple visual feedback.
+
+**4. SDG 6: Clean Water & Sanitation - "Water Source Tracer"**
+*   **Concept:** An educational diorama. The user looks at a cross-section of a landscape (a mountain, river, and town). They can press buttons to see how a pollutant (e.g., factory waste, farm runoff) travels from the source to contaminate the town's drinking water.
+*   **XR Features:** 3D UI buttons, a simple particle system or line renderer to trace the pollution path, spatial audio for information narration.
+*   **Scope:** One static scene, interactive buttons that trigger animations/effects.
+
+**5. SDG 7: Affordable & Clean Energy - "Home Energy Inspector"**
+*   **Concept:** A **Passthrough AR** experience. The user looks around their real room. Virtual icons appear over real-world objects (a light bulb, a laptop charger) showing their energy consumption. Tapping an icon reveals how much energy it uses and suggests a more efficient alternative (e.g., LED bulb).
+*   **XR Features:** Passthrough AR, placing 3D UI elements in the user's real space, simple hand-tracking or controller-based selection.
+*   **Scope:** Focuses on UI design and passthrough integration, not a complex 3D world.
+
+**6. SDG 12: Responsible Consumption - "The Packaging Unwrapper"**
+*   **Concept:** The user picks up a single, over-packaged product (e.g., a small electronic in a large plastic clamshell). As they virtually unwrap each layer, text appears showing the waste generated (e.g., "Layer 1: 15g of non-recyclable plastic").
+*   **XR Features:** Hand tracking to peel away layers (using simple animation or object swapping), spatial text labels.
+*   **Scope:** One core interaction, one product model, focused message.
+
+**7. SDG 4: Quality Education - "Solar System Explorer"**
+*   **Concept:** A scale model of the solar system floats in front of the user. They can grab planets to learn their names and a key fact. They can also trigger an animation to see the orbits.
+*   **XR Features:** Grabbing and rotating 3D models, 3D UI for facts, simple timeline animation for orbits.
+*   **Scope:** A handful of 3D models (planets), one interaction type (grab/rotate), simple animations.
+
+### Key to a Successful Project
+
+*   **One Core Interaction:** Master one interaction (e.g., grabbing, pointing, pressing a button) and make it feel polished.
+*   **One Main Scene:** Avoid complex scene transitions. Build one well-designed environment.
+*   **Clear, Singular Message:** Pick one specific aspect of one SDG. Don't try to explain the entire goal.
+*   **Polish over Features:** A project with beautiful lighting, smooth interactions, and good sound for one idea will score higher than a project with five half-finished ideas.
 
 ## Technical Requirements
 - Must be deployed and fully functional on Quest 3 (or mobile device)
