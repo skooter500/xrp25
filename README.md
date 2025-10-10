@@ -25,11 +25,14 @@ Welcome to the Metaverse
 
 ## Week 4 - XR Projects
 - [XR Sequencer](xr_sequencer_presentation.pdf)
+- [Tweens](tweens.pdf)
 - XR Toolkit
 - Pop
-- Hand tracking & Gestures
+- [Hand tracking & Gestures]
 
 ## Lab
+
+Modify the Step sequencer example to use a MultiMesh3D - it will be much more performant
 
 Create a passthrough XR project
 Use CSG to make the players hand into a shootable gun
