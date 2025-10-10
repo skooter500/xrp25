@@ -23,7 +23,23 @@ Welcome to the Metaverse
 - [Class discord](https://discord.gg/tB7F77ZsZe)
 - [Godot Gaedhleach]
 
+## Week 4 - XR Projects
+- [XR Sequencer](xr_sequencer_presentation.pdf)
+- XR Toolkit
+- Pop
+- Hand tracking & Gestures
+
+## Lab
+
+Create a passthrough XR project
+Use CSG to make the players hand into a shootable gun
+Play a sound when the player shoots
+Make some obstacles using rigidbodies for the player to shoot
+
+## Lab Create 
+
 ## Week 3 - Vector Operations
+- [Tank Game 3D Slides](tank_shooting_presentation.pdf)
 
 
 ## Lab 
