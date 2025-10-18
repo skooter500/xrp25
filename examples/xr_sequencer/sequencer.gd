@@ -122,13 +122,15 @@ func play_step(col):
 var step:int = 0
 
 func _on_timer_timeout() -> void:
-	print("step " + str(step))
+	print("step bryan" + str(step))
 	play_step(step)
 	step = (step + 1) % steps
 	pass # Replace with function body.
 
 
 func _on_start_stop_area_entered(area: Area3D) -> void:
+	$"../sequencer2/Timer".start()
+	
 	if $Timer.is_stopped():
 		$Timer.start()
 	else:
