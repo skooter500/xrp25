@@ -1,16 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://boh8e6hop7l3w"]
+[gd_scene load_steps=5 format=3 uid="uid://boh8e6hop7l3w"]
 
-[ext_resource type="Script" path="res://FPController.gd" id="2_rl0e7"]
-[ext_resource type="Material" uid="uid://12bqh76svrfe" path="res://examples/tank_game_3d/blue.tres" id="2_s74er"]
+[ext_resource type="Script" uid="uid://dgapsfli6cvtl" path="res://examples/tank_game_3d/FPController.gd" id="2_rl0e7"]
 [ext_resource type="PackedScene" uid="uid://d2v5tptyj6j6i" path="res://examples/infinite_terrain/terrain_tile.tscn" id="3_vb03k"]
-[ext_resource type="Script" path="res://infinite_terrain.gd" id="4_c8kae"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_hmt7t"]
+[ext_resource type="Script" uid="uid://d0qwe0b8j1uai" path="res://examples/infinite_terrain/infinite_terrain.gd" id="4_c8kae"]
 
 [sub_resource type="Environment" id="Environment_g3xt2"]
 background_mode = 1
 ambient_light_source = 2
-ambient_light_color = Color(0.63219, 0.180872, 0.957655, 1)
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.41
+fog_light_color = Color(0, 0, 0, 1)
+volumetric_fog_enabled = true
 
 [node name="terrain_gen" type="Node3D"]
 
@@ -22,10 +22,8 @@ rot_speed = 180.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.474672, 0.880163, 0, -0.633669, 0.341738, 0.69403, 0.61086, -0.329437, 0.719946, 0, 11.0446, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-material_override = ExtResource("2_s74er")
-mesh = SubResource("BoxMesh_hmt7t")
+light_energy = 0.904
+light_specular = 15.651
 
 [node name="infinite_terrain" type="Node3D" parent="." node_paths=PackedStringArray("player")]
 script = ExtResource("4_c8kae")

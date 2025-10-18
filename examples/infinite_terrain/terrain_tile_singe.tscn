@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ckd7arxxwrn4u"]
 
-[ext_resource type="Script" path="res://terrain_tile.gd" id="1_fx5wr"]
-[ext_resource type="Script" path="res://FPController.gd" id="2_tr5qu"]
+[ext_resource type="Script" uid="uid://c4np6ee2bb1og" path="res://examples/infinite_terrain/terrain_tile.gd" id="1_fx5wr"]
+[ext_resource type="Script" uid="uid://dgapsfli6cvtl" path="res://examples/tank_game_3d/FPController.gd" id="2_tr5qu"]
 
 [node name="Node3D" type="Node3D"]
 

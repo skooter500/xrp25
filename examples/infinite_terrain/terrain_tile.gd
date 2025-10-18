@@ -1,19 +1,17 @@
 extends Node3D
-
 @export var quads_per_tile: int = 10
 @export var height_scale: float = 10.0  
 @export var width_scale: float = 10.0  
 @export var perlin_scale: float = 0.1
 @export var speed: float = 1.0
 @export var material: Material
-
-@export var low:float = 1
-@export var high:float = 0
-
+@export var low: float = 0
+@export var high: float = 1
 
 var mesh_instance: MeshInstance3D
 var collision_shape: CollisionShape3D
 var current_mesh: ArrayMesh
+var noise_generator: FastNoiseLite
 var t: float = 0.0
 
 func _enter_tree():
@@ -21,7 +19,10 @@ func _enter_tree():
 	generate_mesh()
 
 func _ready():
-	pass
+	# Initialize noise generator once
+	noise_generator = FastNoiseLite.new()
+	noise_generator.seed = 1234
+	noise_generator.frequency = 1.0
 
 func sample_cell(row: float, col: float) -> float:
 	var world_pos = global_position
@@ -35,7 +36,6 @@ func sample_cell(row: float, col: float) -> float:
 		noise = mid + (noise - low)
 	else:
 		noise = mid
-
 	var height = noise * 100
 	return height
 
@@ -66,7 +66,6 @@ func get_normal(x: float, y: float) -> Vector3:
 	)
 	return normal.normalized()
 
-
 func create_mesh():
 	var st = SurfaceTool.new()
 	st.begin(Mesh.PRIMITIVE_TRIANGLES)
@@ -87,6 +86,7 @@ func create_mesh():
 			var uv_tr = Vector2(float(col + 1) / quads_per_tile, float(row + 1) / quads_per_tile)
 			var uv_br = Vector2(float(col + 1) / quads_per_tile, float(row) / quads_per_tile)
 			
+			# First triangle
 			st.set_normal(get_normal(row, col + 1))		
 			st.set_uv(uv_br)	
 			st.add_vertex(br)            
@@ -98,7 +98,6 @@ func create_mesh():
 			st.set_normal(get_normal(row, col))
 			st.set_uv(uv_bl)
 			st.add_vertex(bl)
-						
 						
 			# Second triangle
 			st.set_normal(get_normal(row + 1, col + 1))
@@ -112,14 +111,10 @@ func create_mesh():
 			st.set_normal(get_normal(row, col + 1))
 			st.set_uv(uv_br)
 			st.add_vertex(br)
-			
 	
 	st.generate_tangents()
 	# st.generate_normals()
 	current_mesh = st.commit()
 
 func noise_2d(x: float, y: float) -> float:
-	var noise = FastNoiseLite.new()
-	noise.seed = 1234
-	noise.frequency = 1.0
-	return (noise.get_noise_2d(x, y) + 1.0) / 2.0
+	return (noise_generator.get_noise_2d(x, y) + 1.0) / 2.0
