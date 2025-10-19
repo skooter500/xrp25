@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2447e5p6kwug"]
+
+[ext_resource type="Script" uid="uid://d0x08w32x03lw" path="res://examples/room/scene_anchor.gd" id="1_m0j2d"]
+
+[node name="SceneAnchor" type="StaticBody3D"]
+script = ExtResource("1_m0j2d")

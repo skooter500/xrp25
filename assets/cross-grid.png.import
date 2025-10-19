@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d0or78w3b0xev"
-path.s3tc="res://.godot/imported/cross-grid.png-6776e446abd7ad8b7fa31b635b79b12f.s3tc.ctex"
-path.etc2="res://.godot/imported/cross-grid.png-6776e446abd7ad8b7fa31b635b79b12f.etc2.ctex"
+path.s3tc="res://.godot/imported/cross-grid.png-bba762e4c5e33b751bd0114f39f13f71.s3tc.ctex"
+path.etc2="res://.godot/imported/cross-grid.png-bba762e4c5e33b751bd0114f39f13f71.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://examples/scene/assets/cross-grid.png"
-dest_files=["res://.godot/imported/cross-grid.png-6776e446abd7ad8b7fa31b635b79b12f.s3tc.ctex", "res://.godot/imported/cross-grid.png-6776e446abd7ad8b7fa31b635b79b12f.etc2.ctex"]
+source_file="res://assets/cross-grid.png"
+dest_files=["res://.godot/imported/cross-grid.png-bba762e4c5e33b751bd0114f39f13f71.s3tc.ctex", "res://.godot/imported/cross-grid.png-bba762e4c5e33b751bd0114f39f13f71.etc2.ctex"]
 
 [params]
 

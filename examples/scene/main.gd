@@ -1,13 +1,12 @@
 extends StartXR
 
-const ENVIRONMENT_DEPTH_MATERIAL = preload("res://environment_depth_material.tres")
-const BLUE_MATERIAL = preload("res://blue_material.tres")
+const ENVIRONMENT_DEPTH_MATERIAL = preload("res://examples/scene/environment_depth_material.tres")
+const BLUE_MATERIAL = preload("res://examples/scene/blue_material.tres")
 
 var passthrough_enabled: bool = false
 var scene_and_spatial_anchors_displayed: bool = true
 var selected_spatial_anchor_node: Node3D = null
 var global_environment_depth_enabled: bool = true
-
 @onready var left_hand: XRController3D = $XROrigin3D/LeftHand
 @onready var right_hand: XRController3D = $XROrigin3D/RightHand
 @onready var right_hand_pointer: XRController3D = $XROrigin3D/RightHandPointer
@@ -225,4 +224,4 @@ func _on_scene_manager_scene_capture_completed(success: bool) -> void:
 
 
 func _on_scene_manager_scene_data_missing() -> void:
-	scene_manager.request_scene_capture()
+	$XROrigin3D/OpenXRFbSceneManager.request_scene_capture()

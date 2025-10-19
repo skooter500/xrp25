@@ -1,5 +1,5 @@
 class_name StartXR
-extends Node3D
+extends Node
 
 # This script uses "A Better XR Start Script" in the Godot Docs as a starting template
 # https://docs.godotengine.org/en/latest/tutorials/xr/a_better_xr_start_script.html
@@ -39,10 +39,14 @@ func _ready():
 		xr_interface.session_focussed.connect(_on_openxr_focused_state)
 		xr_interface.session_stopping.connect(_on_openxr_stopping)
 		xr_interface.pose_recentered.connect(_on_openxr_pose_recentered)
+		
+		enable_passthrough()
+		
 	else:
 		# We couldn't start OpenXR.
 		print("OpenXR not instantiated!")
 		get_tree().quit()
+	
 
 
 # Handle OpenXR session ready
@@ -113,9 +117,23 @@ func _on_openxr_stopping() -> void:
 		# session automatically, and in that case, we want to quit.
 		get_tree().quit()
 
+var passthrough_enabled: bool = false
+
+@onready var world_environment: WorldEnvironment = $"../WorldEnvironment"
 
 # Handle OpenXR pose recentered signal
 func _on_openxr_pose_recentered() -> void:
 	# User recentered view, we have to react to this by recentering the view.
 	# This is game implementation dependent.
 	emit_signal("pose_recentered")
+	
+func enable_passthrough() -> bool:
+	if xr_interface and xr_interface.is_passthrough_supported():		
+		return xr_interface.start_passthrough()
+	else:
+		var modes = xr_interface.get_supported_environment_blend_modes()
+		if xr_interface.XR_ENV_BLEND_MODE_ALPHA_BLEND in modes:
+			xr_interface.set_environment_blend_mode(xr_interface.XR_ENV_BLEND_MODE_ALPHA_BLEND)
+			return true
+		else:
+			return false

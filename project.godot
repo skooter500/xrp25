@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="eXtended Reality Prototyping 25"
-run/main_scene="uid://cqsodpswgup8w"
+run/main_scene="uid://d1efr81wcchcc"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
@@ -142,3 +142,7 @@ openxr/extensions/htc/passthrough=true
 openxr/extensions/meta/passthrough=true
 openxr/extensions/meta/scene_api=true
 openxr/extensions/meta/color_space/starting_color_space=3
+openxr/extensions/meta/anchor_api=true
+openxr/extensions/meta/anchor_sharing=true
+openxr/extensions/meta/application_space_warp=true
+openxr/extensions/meta/environment_depth=true
