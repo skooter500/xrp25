@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="eXtended Reality Prototyping 25"
-run/main_scene="uid://d1efr81wcchcc"
+run/main_scene="uid://cmydedvebydm3"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 

@@ -1,0 +1,16 @@
+[gd_resource type="Environment" load_steps=3 format=3 uid="uid://1cpn0tg8jm7c"]
+
+[ext_resource type="Material" uid="uid://bypyk3i4e4inc" path="res://materials/matrix1.tres" id="1_ha0td"]
+
+[sub_resource type="Sky" id="1"]
+sky_material = ExtResource("1_ha0td")
+
+[resource]
+background_mode = 2
+background_color = Color(0.0352941, 0.0352941, 0.0352941, 1)
+sky = SubResource("1")
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.2
+glow_enabled = true
+glow_blend_mode = 1
+glow_hdr_threshold = 1.3

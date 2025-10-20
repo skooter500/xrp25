@@ -13,6 +13,11 @@ signal pose_recentered
 var xr_interface: OpenXRInterface
 var xr_is_focussed = false
 
+@export_range(0, 5, 0.001) var debug_thickness := 0.1
+@export_range(0, 1, 0.001) var debug_center_brightness := 0.8
+
+func _process(delta: float) -> void:
+	DebugDraw3D.scoped_config().set_thickness(debug_thickness).set_center_brightness(debug_center_brightness)		
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
