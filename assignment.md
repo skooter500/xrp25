@@ -87,7 +87,7 @@ Your proposal should include:
 
 Examples from previous years:
 
-- https://www.youtube.com/watch?v=FtxhKLheXAk&- list=PL1n0B6z4e_E6cRfAfzaoXDueW38ZAFsI9
+- https://www.youtube.com/watch?v=FtxhKLheXAk&-list=PL1n0B6z4e_E6cRfAfzaoXDueW38ZAFsI9
 - https://www.youtube.com/watch?v=ZkrQnQmDK-M&list=PL1n0B6z4e_E6LmwpeGIW7vYhesNYUOLEN
 - [https://youtube.com/playlist?list=PL1n0B6z4e_E5naCKOJDfU-sgX_3CdlRfN](2020-2021)
 - [https://youtube.com/playlist?list=PL1n0B6z4e_E6GaGOHiBdPSW0QzICdGs4X](2019-2020)
