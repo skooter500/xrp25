@@ -102,7 +102,6 @@ Examples from previous years:
    - Include [all sections in this file](https://github.com/skooter500/csresources/blob/main/assignmentreadme.md)
 
 ## Resources
-- Quest:SDG base project [available in course repository](https://github.com/skooter500/questsdg)
 - Godot XR documentation: https://docs.godotengine.org/en/stable/tutorials/xr/
 - UN SDG resources: https://sdgs.un.org/
 
