@@ -37,7 +37,8 @@ Projects can be completed **individually or in teams of up to 3 students**.
 
 Your proposal should include:
 
-- Your idea
+- Your project git repo URL
+- Your idea in README.MD in the repo
 - What technology and interaction libraries you are using
 - Who is on your team
 
@@ -47,8 +48,8 @@ Your proposal should include:
 
 | Category | Weighting |
 |-|-|
-| Groovyness | 30%  |
-| Complexity | 30% |
+| Visuals & sound, Quality of outcome | 30%  |
+| Technical Complexity | 30% |
 | Project management & documentation | 30% |
 | Proposal | 10% |
 
@@ -58,7 +59,7 @@ Your proposal should include:
 
 | Grade | Indicative Aspects |
 |-------|------------|
-| 1     | Project is deployed to the Quest. It looks amazing with a high level of polish on the visuals. There is lots of functionality and interactivity - for example buttons to press, levers to turn, colors changing, movement, animation etc. Use of visual effects such as particle systems, shaders to enhance visual quality. Has a clear visual style. Excellent use of the Meta Scene SDK, XR Toolkit or hand tracking. Has great sound effects. Closely aligned with the SDG's. I learned something new! |
+| 1     | Project is deployed to the Quest. It looks amazing with a high level of polish on the visuals. There is lots of functionality and interactivity - for example buttons to press, levers to turn, colors changing, movement, spatial sounds, animation etc. Use of visual effects such as particle systems, shaders to enhance visual quality. Has a clear visual style. Excellent use of the Meta Scene SDK, XR Toolkit or hand tracking. Has great sound effects. Closely aligned with the SDG's. I learned something new! Made a pull request to incorporate your work into one of the starter repos and was accepted |
 | 2.1 | Maybe deployed to the Quest but has some glitches or runs just on PC not in AR. Looks pretty good with decent but simple models. No visual effects. Sound effects grabbed from online sources. Some simple interactivity and button presses. Less coherent visual style. Well aligned with one of the SDG's |
 | 2.2 |  One or two simple models imported from online sources. No interactivity, just an animated visual. Running in Godot. Little or no sound. Not so aligned with the SDG's |
 | Pass | Model from online source or primitive that does not do anything |
@@ -68,9 +69,9 @@ Your proposal should include:
 
  | Grade | Indicative Aspects |
  |-------|------------|
- | 1 | 15-20 hours work. A complete implementation that has lots of interactivity. Scenes and Subscenes used to manage assets. A good few self written scripts. Signals used correctly. Code separated into appropriate methods and classes, following [SOLID principles](https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design). Code demonstrates techniques we have learned on the course including: Godot 3D  systems and Nodes. Transforms, Timers, Tweens, Physics, Materials, XR Toolkit, Meta Scene SDK, Hand Tracking, Procedural Generation. Demonstrated self directed learning. Deployed and demoed on the quest on a phone. |
- | 2.1 | 10-15 hours work. A less complex system that has interactivity. Several self written Scripts with other code included from tutorials and online sources. Long methods. Around 100 lines of self written GDScript, using some of the systems we learned on the course. Working on PC, maybe not VR. |
- | 2.2 | 5-10 hours work. A simple system with a script or two based on modifying the transform or something very basic implemented like a spiral or a simple voxel world. Or most of the functionality is derived from tutorials with little customization or understanding. Little interactivity. Works in Godot, but not tested as a build or on device. No use of other Godot systems. No audio or inappropriate audio. |
+ | 1 | 15-20 hours work. A complete implementation that has lots of interactivity. Scenes and Subscenes used to manage assets. A good few self written scripts. Signals used correctly. Code separated into appropriate methods and classes, following [SOLID principles](https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design). Code demonstrates techniques we have learned on the course including: Godot 3D  systems and Nodes. Transforms, Timers, Tweens, Physics, Materials, XR Toolkit, Meta Scene SDK, Hand Tracking, Procedural Generation. Demonstrated self directed learning. Mastry of Godot systems. Deployed and demoed on the quest on a phone. |
+ | 2.1 | 10-15 hours work. A less complex system that has interactivity. Several self written Scripts with other code included from tutorials and online sources. Long methods. Around 100 lines of self written GDScript, using some of the systems we learned on the course. Working on PC, maybe not VR. Good knowledge of Godot systems demonstrated |
+ | 2.2 | 5-10 hours work. A simple system with a script or two based on modifying the transform or something very basic implemented like a spiral or a simple voxel world. Or most of the functionality is derived from tutorials with little customization or understanding. Little interactivity. Works in Godot, but not tested as a build or on device. No use of other Godot systems. No audio or inappropriate audio. Limited use of other Godot systems |
  | Pass | < 5 hours work. A single GDScript or scene or all from a tutorial. Compiles and runs |
 | Fail | No submission or nothing works |
 
@@ -79,7 +80,7 @@ Your proposal should include:
 
 | Grade | Indicative Aspects  |
 |-------|------|
-| 1 |  Clear initial proposal and plan. 30-40 commits. Feature branches. For team projects, an equal distribution of the commits. Commits all commented. All sections of the template filled out. Document includes reflective elements - What did I learn? Sources properly referenced. Embedded, public, listed youtube video (DO NOT CHECK THIS VIDEO IS MADE FOR KIDS). The video demonstrates all the features of your project |
+| 1 |  Clear initial proposal. 30-40 commits. Feature branches. For team projects, an equal distribution of the commits. Commits all commented. All sections of the template filled out. Document includes reflective elements - What did I learn? Sources properly referenced. Embedded, public, listed youtube video (DO NOT CHECK THIS VIDEO IS MADE FOR KIDS). The video demonstrates all the features of your project |
 | 2.1 | 20-30 commits. One or two branches. All sections of the template filled out. Sources properly referenced. Issues with the video. 
 | 2.2 |10-20 commits, terse or no comments. No branches. Documentation incomplete, Evidence of reflective learning missing. missing references. Issues with the video |
 | Pass | < 10 commits. terse or no comments. No branches. Documentation incomplete. No video |
