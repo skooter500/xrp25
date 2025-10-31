@@ -4,13 +4,13 @@
 
 ![](images/xrx.webp)
 
-For this assignment, you will demonstrate your creativity and technical competency with Godot and XR development by creating an interactive experience inspired by the UN Sustainable Development Goals (SDGs). Your project must be deployed to an XR headset, or mobile device and should educate, engage, or inspire action around one or more of the 17 SDGs.
+For this assignment, you will create a short interactive experience inspired by the UN Sustainable Development Goals (SDGs). 
 
-This assignment builds on the Quest:SDG project developed over summer. You may choose to:
+- **Extend Quest:SDG**: Add new features, goals, interactions, or systems to the existing project. For example, things that happen around the campus when the player activates one of the SDG's - Fork [this github repo](https://github.com/skooter500/questsdg)
 
-- **Extend Quest:SDG**: Add new features, goals, interactions, or systems to the existing project
+- **Create a standalone experience**: Fork [this github repo](https://github.com/skooter500/xrp25). Its all the examples we are making this year.
 
-- **Create a standalone experience**: Build your own SDG-focused XR application from scratch
+You can use hand tracking or XR Toolkit and spatial audio, the META Scene SDK to interact with the real world. It can be a simulation, a game or interactive experience,  a visulisation, give the user some information or teach them something about the SDG's. It can be related to TU Dublin and you have the maps and models in Quest SDG so you can make things happen around the campus. 
 
 Projects can be completed **individually or in teams of up to 3 students**.
 
@@ -33,127 +33,75 @@ Projects can be completed **individually or in teams of up to 3 students**.
 16. Peace, Justice and Strong Institutions
 17. Partnerships for the Goals
 
-## Project Ideas
-
-Remember, a **simple, polished experience is better than a complex, unfinished one.**
-
-**1. SDG 13: Climate Action - "The Melting Glacier"**
-*   **Concept:** A single, powerful scene. The user stands on a virtual glacier. Over 60 seconds, they watch it rapidly melt due to rising temperatures, revealing barren rock beneath. A simple UI shows the tons of ice lost and sea-level rise equivalent.
-*   **XR Features:** A simple shader to "shrink" the glacier model, ambient sound of dripping water turning into silence, spatial UI for stats.
-*   **Scope:** One environment, one core visual effect, minimal interaction.
-
-**2. SDG 14: Life Below Water - "Ocean Plastics Cleanup"**
-*   **Concept:** A stationary underwater experience. The user uses their hands to grab floating plastic bottles and bags and put them in a virtual recycling bin. A counter shows how many items they've collected.
-*   **XR Features:** Hand tracking to grab objects, simple physics for floating debris, particle effects for bubbles.
-*   **Scope:** One environment, one interaction (grab), a handful of 3D models.
-
-**3. SDG 15: Life on Land - "Virtual Bee Pollinator"**
-*   **Concept:** The user embodies a bee. They fly from one flower to another (using a simple point-and-teleport mechanic). As they touch each flower, it blooms and a "pollination counter" increases. The goal is to pollinate all flowers in a small garden.
-*   **XR Features:** Teleportation locomotion, simple trigger-based interaction (touching the flower), particle effects for pollen.
-*   **Scope:** A small garden scene, one core game loop, simple visual feedback.
-
-**4. SDG 6: Clean Water & Sanitation - "Water Source Tracer"**
-*   **Concept:** An educational diorama. The user looks at a cross-section of a landscape (a mountain, river, and town). They can press buttons to see how a pollutant (e.g., factory waste, farm runoff) travels from the source to contaminate the town's drinking water.
-*   **XR Features:** 3D UI buttons, a simple particle system or line renderer to trace the pollution path, spatial audio for information narration.
-*   **Scope:** One static scene, interactive buttons that trigger animations/effects.
-
-**5. SDG 7: Affordable & Clean Energy - "Home Energy Inspector"**
-*   **Concept:** A **Passthrough AR** experience. The user looks around their real room. Virtual icons appear over real-world objects (a light bulb, a laptop charger) showing their energy consumption. Tapping an icon reveals how much energy it uses and suggests a more efficient alternative (e.g., LED bulb).
-*   **XR Features:** Passthrough AR, placing 3D UI elements in the user's real space, simple hand-tracking or controller-based selection.
-*   **Scope:** Focuses on UI design and passthrough integration, not a complex 3D world.
-
-**6. SDG 12: Responsible Consumption - "The Packaging Unwrapper"**
-*   **Concept:** The user picks up a single, over-packaged product (e.g., a small electronic in a large plastic clamshell). As they virtually unwrap each layer, text appears showing the waste generated (e.g., "Layer 1: 15g of non-recyclable plastic").
-*   **XR Features:** Hand tracking to peel away layers (using simple animation or object swapping), spatial text labels.
-*   **Scope:** One core interaction, one product model, focused message.
-
-**7. SDG 4: Quality Education - "Solar System Explorer"**
-*   **Concept:** A scale model of the solar system floats in front of the user. They can grab planets to learn their names and a key fact. They can also trigger an animation to see the orbits.
-*   **XR Features:** Grabbing and rotating 3D models, 3D UI for facts, simple timeline animation for orbits.
-*   **Scope:** A handful of 3D models (planets), one interaction type (grab/rotate), simple animations.
-
-### Key to a Successful Project
-
-*   **One Core Interaction:** Master one interaction (e.g., grabbing, pointing, pressing a button) and make it feel polished.
-*   **One Main Scene:** Avoid complex scene transitions. Build one well-designed environment.
-*   **Clear, Singular Message:** Pick one specific aspect of one SDG. Don't try to explain the entire goal.
-*   **Polish over Features:** A project with beautiful lighting, smooth interactions, and good sound for one idea will score higher than a project with five half-finished ideas.
-
-## Technical Requirements
-- Must be deployed and fully functional on Quest 3 (or mobile device)
-- Must use version control (git) throughout development with regular commits
-- Must meaningfully address at least one UN SDG (educational, awareness-raising, or action-oriented)
-- Must utilize XR-specific features (hand tracking, spatial audio, 3D UI, passthrough, etc.)
-- Should demonstrate understanding of Godot's XR systems and SDG concepts
-- Must include proper attribution for any assets used (textures, 3D models, data sources)
-
-## Deliverables
-
-### Proposal (10% - Due 24th October)
+### Proposal (10% - Due 31st October)
 
 Your proposal should include:
 
-1. **Project Overview** (200-300 words)
-   - Project title and idea
-   - Which SDG(s) your project addresses and why
-   - Whether extending Quest:SDG or creating standalone
-   - Team members (if applicable) and role distribution#
-   - Key features and interactions
-   - XR technologies you'll use (hand tracking, passthrough, spatial audio, etc.)
-   - At least 3 sketches or diagrams showing:
-     - Main user interface
-     - Key interactions
-     - Spatial layout/environment
-   - Can be hand-drawn, digital, or simple 3D blockouts
+- Your project git repo URL
+- Your idea in README.MD in the repo
+- What technology and interaction libraries you are using
+- Who is on your team
 
-**Submission Format**: initial git repository link + readme.md file containing the above information
+### Rubric
 
-### Final Deliverable (40% - End of Semester)
+# Weighting
 
-1. **Working XR or Mobile Application** demonstrated in class
+| Category | Weighting |
+|-|-|
+| Visuals & sound, Quality of outcome | 30%  |
+| Technical Complexity | 30% |
+| Project management & documentation | 30% |
+| Proposal | 10% |
+
+# Rubric
+
+## Visuals & sound, Quality of outcome
+
+| Grade | Indicative Aspects |
+|-------|------------|
+| 1     | Project is deployed to the Quest. It looks amazing with a high level of polish on the visuals. There is lots of functionality and interactivity - for example buttons to press, levers to turn, colors changing, movement, spatial sounds, animation etc. Use of visual effects such as particle systems, shaders to enhance visual quality. Has a clear visual style. Excellent use of the Meta Scene SDK, XR Toolkit or hand tracking. Has great sound effects. Closely aligned with the SDG's. I learned something new!  |
+| 2.1 | Maybe deployed to the Quest but has some glitches or runs just on PC not in AR. Looks pretty good with decent but simple models. No visual effects. Sound effects grabbed from online sources. Some simple interactivity and button presses. Less coherent visual style. Well aligned with one of the SDG's |
+| 2.2 |  One or two simple models imported from online sources. No interactivity, just an animated visual. Running in Godot. Little or no sound. Not so aligned with the SDG's |
+| Pass | Model from online source or primitive that does not do anything |
+| Fail | Does not compile or little or no content |
+ 
+ ## Technical Implimentation 
+
+ | Grade | Indicative Aspects |
+ |-------|------------|
+ | 1 | 15-20 hours work. A complete implementation that has lots of interactivity. Scenes and Subscenes used to manage assets. A good few self written scripts. Signals used correctly. Code separated into appropriate methods and classes, following [SOLID principles](https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design). Code demonstrates techniques we have learned on the course including: Godot 3D  systems and Nodes. Transforms, Timers, Tweens, Physics, Materials, XR Toolkit, Meta Scene SDK, Hand Tracking, Procedural Generation. Demonstrated self directed learning. Mastry of Godot systems. Deployed and demoed on the quest on a phone.  Made a pull request to incorporate your work into one of the starter repos and was accepted |
+ | 2.1 | 10-15 hours work. A less complex system that has interactivity. Several self written Scripts with other code included from tutorials and online sources. Long methods. Around 100 lines of self written GDScript, using some of the systems we learned on the course. Working on PC, maybe not VR. Good knowledge of Godot systems demonstrated |
+ | 2.2 | 5-10 hours work. A simple system with a script or two based on modifying the transform or something very basic. Or most of the functionality is derived from tutorials with little customization or understanding. Little interactivity. Works in Godot, but not tested as a build or on device. No use of other Godot systems. No audio or inappropriate audio. Limited use of other Godot systems |
+ | Pass | < 5 hours work. A single GDScript or scene or all from a tutorial. Compiles and runs |
+| Fail | No submission or nothing works |
+
+
+## Project Management & Documentation
+
+| Grade | Indicative Aspects  |
+|-------|------|
+| 1 |  Clear initial proposal. 30-40 commits. Feature branches. For team projects, an equal distribution of the commits. Commits all commented. All sections of the template filled out. Document includes reflective elements - What did I learn? Sources properly referenced. Embedded, public, listed youtube video (DO NOT CHECK THIS VIDEO IS MADE FOR KIDS). The video demonstrates all the features of your project |
+| 2.1 | 20-30 commits. One or two branches. All sections of the template filled out. Sources properly referenced. Issues with the video. 
+| 2.2 |10-20 commits, terse or no comments. No branches. Documentation incomplete, Evidence of reflective learning missing. missing references. Issues with the video |
+| Pass | < 10 commits. terse or no comments. No branches. Documentation incomplete. No video |
+
+Examples from previous years:
+
+- https://www.youtube.com/watch?v=FtxhKLheXAk&-list=PL1n0B6z4e_E6cRfAfzaoXDueW38ZAFsI9
+- https://www.youtube.com/watch?v=ZkrQnQmDK-M&list=PL1n0B6z4e_E6LmwpeGIW7vYhesNYUOLEN
+- [https://youtube.com/playlist?list=PL1n0B6z4e_E5naCKOJDfU-sgX_3CdlRfN](2020-2021)
+- [https://youtube.com/playlist?list=PL1n0B6z4e_E6GaGOHiBdPSW0QzICdGs4X](2019-2020)
+- [https://youtube.com/playlist?list=PL1n0B6z4e_E5qaYwUOlJ63XI2OR9ty7Bs](2018-2019)
+
+1. Demo in class
    
-2. **Git Repository**
-   - Regular commits throughout development (minimum 20 meaningful commits)
-   - Clear commit messages
-   - README with setup instructions
-   - .gitignore properly configured
-   - Include all the sections in this [readme.md]()() file
-
-**References**: All sources, assets, and research materials cited properly
-
-3. **Video Demonstration**
-   - Live demonstration of all features in XR
-   - Upload to YouTube and embed in your readme.md
-
-**Submission Format**: 
-- In class demo
-- Documentation in the readme.md
-- Video uploaded to YouTube/Vimeo
-- Git repository link
-
-## Rubric
-| Category | Weighting | 1 | 2.1 | 2.2 | Pass | Fail |
-|----------|-----------|--------|----|----|----|----|
-| **Technical Implementation** | 40% | Advanced algorithm design (e.g., procedural environment generation, complex gesture recognition, spatial audio systems, custom hand-tracking interactions). Sophisticated use of Godot's XR toolkit or other asset. Multiple custom nodes/systems showing SOLID principles. Complex state management and scene architecture. Effective performance optimization for mobile XR. Demonstrates significant self-directed learning of XR topics beyond course material. Clean, well-structured code. Excellent git workflow with meaningful, regular commits throughout development. Strong integration of SDG content with technical systems. | Implementation of moderately complex XR features (e.g., hand tracking, spatial UI design, basic gesture detection, spatial audio). Good use of Godot's built-in XR systems and nodes. Custom scripts showing good OOP practices. Basic visual effects. Evidence of self-directed learning. Regular, well-documented git commits. Good SDG content integration. Functional XR deployment to headset. | Basic XR feature implementation using primarily built-in Godot XR functionality. Some custom nodes. Simple hand tracking or controller input. Basic spatial interactions and UI. Adequate SDG representation. Basic version control usage. Functional deployment with acceptable performance. | Minimal working XR implementation. Limited interactions beyond basic controller input. Poor code structure. Sparse git usage. Weak SDG integration. Deployment works but with performance issues. | Non-functional XR implementation. Doesn't deploy to headset or crashes frequently. No version control. Code doesn't compile or run. No meaningful SDG content. |
-| **User Experience & Creativity** | 30% | Highly innovative XR concept with strong SDG alignment. Exceptional attention to XR user interaction design (comfort, intuitive spatial UI, natural gestures). Professional-quality visual feedback and environmental design. Novel approach to communicating SDG concepts in XR. Outstanding comfort considerations (locomotion, UI placement, interaction ergonomics). Demonstrates deep understanding of XR platform capabilities and limitations. High degree of polish and refinement. Clear educational impact or awareness-raising value. | Good original concept with clear SDG purpose. Intuitive and comfortable XR interface. Meaningful visual/audio feedback. Good spatial UI design. Effective SDG communication. Shows creativity in XR implementation. Good platform integration and performance. Evidence of user testing and iteration. | Basic but complete XR concept. Functional interface and interactions. Simple feedback systems. Adequate SDG representation. Standard XR interaction patterns. Limited but acceptable comfort design. Some consideration of user experience. Meets basic requirements. | Minimal XR interaction design. Basic feedback. Poor comfort considerations. Weak SDG connection or unclear messaging. Poor platform integration. Limited user testing evident. | Incomplete or non-functional experience. Causes discomfort or disorientation. No meaningful SDG content. Unusable interface. |
-| **Technical Documentation** | 30% | Comprehensive documentation, thorough feature documentation, clear setup and deployment instructions, known issues/limitations, performance analysis, XR-specific implementation details, SDG research and integration rationale. Professional video demonstration (5-10 minutes) showing all features, technical highlights, XR-specific functionality, and development process. Exemplary git history with regular, well-documented commits throughout development showing clear progression. All sources and assets properly cited. | Good documentation covering main systems and features. Solid setup guide and deployment instructions. Good quality video demo showing key features and code. Regular git commits with meaningful messages. XR implementation explained well. SDG integration documented. Proper citations. | Basic documentation of core features. Simple diagrams present. Video demonstration shows main functionality. Some git history with adequate commit messages. Basic explanation of XR systems and SDG connection. | Minimal documentation. Poor quality or very brief video. Few git commits or unclear commit messages. Limited explanation of technical implementation. Weak or missing SDG rationale. | No documentation or completely inadequate. Missing video or non-functional recording. No meaningful version control history. No citations or attribution. |
-
-**Note on Team Projects**: 
-- All team members must contribute equally and will be individually assessed
-- Unequal contribution may result in different grades for team members
-- Git commits will be used to verify contribution
-
+2. Git Repository
+   - Regular commits throughout development 
+   - Include [all sections in this file](https://github.com/skooter500/csresources/blob/main/assignmentreadme.md)
 
 ## Resources
-- Quest:SDG base project [available in course repository](https://github.com/skooter500/questsdg)
 - Godot XR documentation: https://docs.godotengine.org/en/stable/tutorials/xr/
 - UN SDG resources: https://sdgs.un.org/
-- Meta Quest SDK
-- Previous student projects 
 
-- https://www.youtube.com/watch?v=FtxhKLheXAk&- list=PL1n0B6z4e_E6cRfAfzaoXDueW38ZAFsI9
-- https://www.youtube.com/watch?v=ZkrQnQmDK-M&list=PL1n0B6z4e_E6LmwpeGIW7vYhesNYUOLEN
 
-**The rubric features are indicative rather than exhaustive** - exceptional work may demonstrate excellence in ways not explicitly listed. Focus on showing mastery of XR development and Godot while meaningfully engaging with the UN Sustainable Development Goals.
 
----
