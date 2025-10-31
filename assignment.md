@@ -71,7 +71,7 @@ Your proposal should include:
  |-------|------------|
  | 1 | 15-20 hours work. A complete implementation that has lots of interactivity. Scenes and Subscenes used to manage assets. A good few self written scripts. Signals used correctly. Code separated into appropriate methods and classes, following [SOLID principles](https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design). Code demonstrates techniques we have learned on the course including: Godot 3D  systems and Nodes. Transforms, Timers, Tweens, Physics, Materials, XR Toolkit, Meta Scene SDK, Hand Tracking, Procedural Generation. Demonstrated self directed learning. Mastry of Godot systems. Deployed and demoed on the quest on a phone.  Made a pull request to incorporate your work into one of the starter repos and was accepted |
  | 2.1 | 10-15 hours work. A less complex system that has interactivity. Several self written Scripts with other code included from tutorials and online sources. Long methods. Around 100 lines of self written GDScript, using some of the systems we learned on the course. Working on PC, maybe not VR. Good knowledge of Godot systems demonstrated |
- | 2.2 | 5-10 hours work. A simple system with a script or two based on modifying the transform or something very basic implemented like a spiral or a simple voxel world. Or most of the functionality is derived from tutorials with little customization or understanding. Little interactivity. Works in Godot, but not tested as a build or on device. No use of other Godot systems. No audio or inappropriate audio. Limited use of other Godot systems |
+ | 2.2 | 5-10 hours work. A simple system with a script or two based on modifying the transform or something very basic. Or most of the functionality is derived from tutorials with little customization or understanding. Little interactivity. Works in Godot, but not tested as a build or on device. No use of other Godot systems. No audio or inappropriate audio. Limited use of other Godot systems |
  | Pass | < 5 hours work. A single GDScript or scene or all from a tutorial. Compiles and runs |
 | Fail | No submission or nothing works |
 
@@ -92,8 +92,6 @@ Examples from previous years:
 - [https://youtube.com/playlist?list=PL1n0B6z4e_E5naCKOJDfU-sgX_3CdlRfN](2020-2021)
 - [https://youtube.com/playlist?list=PL1n0B6z4e_E6GaGOHiBdPSW0QzICdGs4X](2019-2020)
 - [https://youtube.com/playlist?list=PL1n0B6z4e_E5qaYwUOlJ63XI2OR9ty7Bs](2018-2019)
-
-### Final Deliverable (40% - End of Semester)
 
 1. Demo in class
    
