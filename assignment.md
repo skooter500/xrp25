@@ -33,7 +33,7 @@ Projects can be completed **individually or in teams of up to 3 students**.
 16. Peace, Justice and Strong Institutions
 17. Partnerships for the Goals
 
-### Proposal (10% - Due 31st October)
+### Proposal (10% - Due 7th November)
 
 Your proposal should include:
 
