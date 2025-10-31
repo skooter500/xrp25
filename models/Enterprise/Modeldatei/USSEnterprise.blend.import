@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://br2equ66anrk"
-path="res://.godot/imported/USSEnterprise.blend-dcc21e82b2003edbc0757d5a5bfc5808.scn"
+valid=false
 
 [deps]
 
 source_file="res://models/Enterprise/Modeldatei/USSEnterprise.blend"
-dest_files=["res://.godot/imported/USSEnterprise.blend-dcc21e82b2003edbc0757d5a5bfc5808.scn"]
 
 [params]
 
