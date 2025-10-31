@@ -23,6 +23,10 @@ Welcome to the Metaverse
 - [Class discord](https://discord.gg/tB7F77ZsZe)
 - [Godot Gaedhleach]
 
+## Week 6
+- [Meta Scene SDK](https://godotvr.github.io/godot_openxr_vendors/manual/meta/scene_manager.html)
+- [Tweens](tweens.pdf)
+
 ## Week 5 - Quest:SDG
 - [Physics](physics.pdf)
 - [Quest:SDG](sdg_presentation.pdf)
