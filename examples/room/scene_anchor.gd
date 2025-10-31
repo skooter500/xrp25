@@ -9,6 +9,6 @@ func setup_scene(entity: OpenXRFbSpatialEntity) -> void:
 	if collision_shape:
 		add_child(collision_shape)
 
-	#var mesh_instance = entity.create_mesh_instance()
-	#if mesh_instance:
-		#add_child(mesh_instance)
+	var mesh_instance = entity.create_mesh_instance()
+	if mesh_instance:
+		add_child(mesh_instance)

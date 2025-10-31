@@ -4,3 +4,5 @@
 
 [node name="SceneAnchor" type="StaticBody3D"]
 script = ExtResource("1_m0j2d")
+
+[node name="Label3D" type="Label3D" parent="."]
