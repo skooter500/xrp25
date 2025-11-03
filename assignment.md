@@ -1,5 +1,9 @@
 # eXtended Reality Prototyping Assignment 2024
 
+This assignment is in category 4 for use of AI:
+
+![alt text](images/useofai.png>)
+
 "Quest:SDG - Extended Reality for Sustainable Development"
 
 ![](images/xrx.webp)
