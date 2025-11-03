@@ -2,7 +2,7 @@
 
 This assignment is in category 4 for use of AI:
 
-![alt text](images/useofai.png>)
+![alt text](images/useofai.png)
 
 "Quest:SDG - Extended Reality for Sustainable Development"
 
