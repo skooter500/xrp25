@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://c7mbuqex3crh4"]
+
+[ext_resource type="Script" uid="uid://bd5qaetgbo06s" path="res://quaternions.gd" id="1_y45e6"]
+[ext_resource type="Script" uid="uid://blkit1jxfiaqq" path="res://agent.gd" id="3_ejm82"]
+[ext_resource type="Script" uid="uid://rxf2lo8duugx" path="res://target.gd" id="4_ieabo"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cmdyk"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_blqxc"]
+sky_material = SubResource("ProceduralSkyMaterial_cmdyk")
+
+[sub_resource type="Environment" id="Environment_ejm82"]
+background_mode = 2
+sky = SubResource("Sky_blqxc")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_2swju"]
+size = Vector3(1, 1, 2)
+
+[node name="quat" type="Node3D"]
+script = ExtResource("1_y45e6")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ejm82")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.23122156, 0.97290117, 0, -0.97290117, 0.23122156, 0, 20.335215, 0.98358727)
+
+[node name="agent" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_2swju")
+script = ExtResource("3_ejm82")
+
+[node name="target" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.348701, 0, -18.802448)
+mesh = SubResource("BoxMesh_2swju")
+script = ExtResource("4_ieabo")
