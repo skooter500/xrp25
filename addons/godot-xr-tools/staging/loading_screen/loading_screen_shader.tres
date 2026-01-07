@@ -63,7 +63,7 @@ condition = 1
 
 [resource]
 code = "shader_type spatial;
-render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx, unshaded;
+render_mode blend_mix, depth_draw_opaque, depth_test_default, cull_back, diffuse_lambert, specular_schlick_ggx, unshaded;
 
 uniform vec4 bar_color : source_color;
 uniform sampler2D bar_texture : source_color;
@@ -150,7 +150,6 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-744.269, 307.118)
 flags/unshaded = true
 nodes/fragment/0/position = Vector2(1220, 440)
 nodes/fragment/3/node = SubResource("10")

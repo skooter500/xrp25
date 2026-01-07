@@ -102,7 +102,7 @@ function = 12
 
 [resource]
 code = "shader_type spatial;
-render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx, unshaded;
+render_mode blend_mix, depth_draw_opaque, depth_test_default, cull_back, diffuse_lambert, specular_schlick_ggx, unshaded;
 
 uniform vec4 albedo : source_color;
 uniform float value;
@@ -253,7 +253,6 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(652.664, 119.317)
 flags/unshaded = true
 nodes/fragment/0/position = Vector2(1800, -40)
 nodes/fragment/2/node = SubResource("3")
